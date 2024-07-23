@@ -102,7 +102,7 @@
   
   - To delete a branch: `git branch -d <branch-name>`
   
-  - To switch to a new branch `git switch <branch-name`
+  - To switch to a new branch `git switch <branch-name>`
 
 - `git stash`Temporarily saves changes that are not ready to be committed
   
