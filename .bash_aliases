@@ -16,6 +16,3 @@ alias venv='source /home/abc/Utilities/myenv/bin/activate'
 alias ~='cd ~'
 alias notes='marktext /home/abc/Documents/configuration/notes.md'
 alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
-
-alias test='clear'
-alias anothertest='clear'
