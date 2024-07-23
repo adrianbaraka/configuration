@@ -19,3 +19,4 @@ alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
 
 alias test='clear'
 alias test1='clear'
+alias test2='ls'
