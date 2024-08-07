@@ -212,3 +212,9 @@
 
 - **Edit Crontab**: `crontab -e` (open crontab for editing).
 - **List Crontab**: `crontab -l` (list crontab entries).
+
+# Windows
+## Battery Information 
+- *Windows 7*  `powercfg -energy` Will generate the report `energy-report.html` located at `C:\Windows\system32`
+- *Windows 8 and 10* `powercfg /batteryreport`  Will generate the report `battery-report.html`  located at `C:`
+P
