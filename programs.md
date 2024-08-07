@@ -8,7 +8,7 @@
 | Marktext   | Markdown text editor          | [GitHub](https://github.com/marktext/marktext)                                                                               |
 | Connmanctl | Manage network interfaces     | [Apt](https://packages.debian.org/bookworm/connman)                                                                          |
 | Blueman    | Manage bluetooth devices      | [Github](https://github.com/blueman-project/blueman?tab=readme-ov-file), [Apt](https://packages.debian.org/bookworm/blueman) |
-|            |                               |                                                                                                                              |
+| Gsudo      | Sudo for windows              | [Github](https://github.com/gerardog/gsudo)                                                                                  |
 |            |                               |                                                                                                                              |
 |            |                               |                                                                                                                              |
 |            |                               |                                                                                                                              |

@@ -55,6 +55,11 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+#PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null); \
+#PS1="\[\e[92;1m\]┌──(\[\e[22;3m\]\u\[\e[23;1m\]@\h\[\e[22m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;92m\]]\[\e[0m\] "; \
+#if [ -n "$PS1_CMD1" ]; then PS1+="(\[\e[93m\]$PS1_CMD1\[\e[0m\])"; fi; \
+#PS1+="\n\[\e[92;1m\]└─\[\e[38;5;202m\]\\$ \a\[\e[0m\]"'
+
 
 if [ "$color_prompt" = yes ]; then
     PS1='\[\e[92;1m\]┌──(\[\e[22;3m\]\u\[\e[23;1m\]@\h\[\e[22m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;92m\]]\n└─\[\e[38;5;202m\]\\$ \[\e[0m\]'
