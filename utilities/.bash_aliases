@@ -1,3 +1,4 @@
+#all aliases in different systems
 alias ..='cd ..'
 alias c='clear'
 alias chmod='chmod -v'
@@ -12,7 +13,12 @@ alias py='python3'
 alias python='python3'
 alias rm='rm -i'
 alias bat='bat --paging=never'
-alias venv='source /home/abc/Utilities/myenv/bin/activate'
 alias ~='cd ~'
-alias notes='marktext /home/abc/Documents/configuration/notes.md'
 alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
+
+#debian specific aliases
+alias venv='source /home/abc/Utilities/myenv/bin/activate'
+alias notes='marktext /home/abc/Documents/configuration/notes.md'
+
+#termux mobile special
+alias notes='cdl /data/data/com.termux/files/home/storage/shared/Documents/configuration'
