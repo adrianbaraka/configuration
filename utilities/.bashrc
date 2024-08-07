@@ -24,3 +24,10 @@ fi
 #Include snap in path
 export PATH=$PATH:/snap/bin
 
+##Start ssh ssh-agent and add the github key
+# Start the sshd service
+sshd
+# Initialize the ssh-agent
+eval "$(ssh-agent -s)"
+# Add the SSH key
+ssh-add ~/.ssh/github_id_ed25519
