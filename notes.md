@@ -128,6 +128,8 @@
 
 - `git fetch` Fetch info from remote without merging to local
 
+- To delete a branch in the remote `git push origin --delete <branch-name>`
+
 - Using SSH and github:
   
   - Generate an [ssh key](#SSH)
