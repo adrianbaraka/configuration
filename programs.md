@@ -9,7 +9,7 @@
 | Connmanctl | Manage network interfaces     | [Apt](https://packages.debian.org/bookworm/connman)                                                                          |
 | Blueman    | Manage bluetooth devices      | [Github](https://github.com/blueman-project/blueman?tab=readme-ov-file), [Apt](https://packages.debian.org/bookworm/blueman) |
 | Gsudo      | Sudo for windows              | [Github](https://github.com/gerardog/gsudo)                                                                                  |
-|            |                               |                                                                                                                              |
+| Disk Drill | Disk recovery software        | [Google drive](https://drive.google.com/file/d/1ztaaO9CBkXhGeojjeinbPzfPYUiEyDf2/view?usp=drive_link)                        |
 |            |                               |                                                                                                                              |
 |            |                               |                                                                                                                              |
 |            |                               |                                                                                                                              |
