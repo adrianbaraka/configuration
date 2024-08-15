@@ -1,10 +1,14 @@
 ## This file contains any additions to a bashrc file 
 
 #Include the current git branch if a git repo is detected in the prompt
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null); \
-PS1="\[\e[92;1m\]┌──(\[\e[22;3m\]\u\[\e[23;1m\]@\h\[\e[22m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;92m\]]\[\e[0m\] "; \
-if [ -n "$PS1_CMD1" ]; then PS1+="(\[\e[93m\]$PS1_CMD1\[\e[0m\])"; fi; \
-PS1+="\n\[\e[92;1m\]└─\[\e[38;5;202m\]\\$ \a\[\e[0m\]"'
+PROMPT_COMMAND='
+	PS1_CMD1=$(git branch --show-current 2>/dev/null);
+	PS1="\[\e[92;1m\]┌──(\[\e[22;3m\]\u\[\e[23;1m\]@\h\[\e[22m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;92m\]]\[\e[0m\] ";
+	if [ -n "$PS1_CMD1" ]; then
+	    PS1+="(\[\e[93m\]$PS1_CMD1\[\e[0m\])";
+	fi;
+	PS1+="\n\[\e[92;1m\]└─\[\e[38;5;202m\]\\$ \[\e[0m\]";
+	export PS1'
 
 
 if [ -f ~/.bash_aliases ]; then
@@ -24,10 +28,11 @@ fi
 #Include snap in path
 export PATH=$PATH:/snap/bin
 
-##Start ssh ssh-agent and add the github key
-# Start the sshd service
+##Start ssh ssh-agent and add the github key redirect output to /dev/null
+# Start the sshd service termux
 sshd
+
 # Initialize the ssh-agent
-eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)" > /dev/null 
 # Add the SSH key
-ssh-add ~/.ssh/github_id_ed25519
+ssh-add -q ~/.ssh/github_id_ed25519	

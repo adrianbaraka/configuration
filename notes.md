@@ -6,6 +6,10 @@
    - [Packages](#packages)
    - [Shell Operations](#shell-operations)
    - [Crontab](#crontab)
+   - [User and Group Management](#user-and-group-management)
+     - [Users](#users)
+     - [Password Management](#password-management)
+     - [Groups](#groups) 
 2. [Windows OS](#windows-os)
    - [Battery Info](#battery-information)
 3. [SSH](#ssh)
@@ -17,9 +21,32 @@
 
 ## Linux OS
 
+- Use man pages for more detailed info.
+
+- All Man pages are stored in `/usr/share/man`
+  
+  - `/usr/share/man/man1/` contains man pages for user commands (section 1).
+  
+  - `/usr/share/man/man2/` contains man pages for system calls (section 2).
+  
+  - `/usr/share/man/man3/` contains man pages for library functions (section 3).
+  
+  - `/usr/share/man/man4/` contains man pages for **Special Files** (section 4).
+  
+  - `/usr/share/man/man5/` contains man pages for **File Formats and Conventions** (section 5).
+  
+  - `/usr/share/man/man6/` contains man pages for **Games and Screensavers** (section 6).
+  
+  - `/usr/share/man/man7/` contains man pages for **Miscellaneous** (section 7).
+  
+  - `/usr/share/man/man8/` contains man pages for **System Administration Commands** (section 8).
+
+- Use `grep` to search for a specific one.
+
 ### Service management
 
 - Use [_stacer_](https://github.com/oguzhaninan/Stacer) to view all running processes or [_htop_](https://github.com/htop-dev/htop).
+- Default unit files are found in`/lib/systemd/system/`. *`grep` for .service files.*
 
 #### Systemctl
 
@@ -37,7 +64,7 @@
 
 - _Requires super user access_
 
-- Type / to search for a specicic keyword _case sensitive_
+- Users in groups 'adm', 'systemd-journal' can see all messages.
 
 - Common options
   
@@ -97,7 +124,7 @@
 
 - **Changing Default Shell**: To change the default shell of a user, modify it in `/etc/passwd` (requires root).
   
-  <hr/>
+  ***
 
 - **History Command**: Shows all commands used.
 
@@ -105,15 +132,158 @@
 
 - **Hide Command from History**: Add a space before the command.
   
-  <hr/>
+  ***
 
 - Use [this prompt generator](https://bash-prompt-generator.org/) to generate a custom PS1 prompt.
+  
+  ---
+
+- stdin 0 stdout 1 stderr 2. Redirect each to separate places with > or append with >>.
+
+- /dev/null is basically a black hole of files.
 
 ### Crontab
 
 - **Edit Crontab**: `crontab -e` (open crontab for editing).
 - **List Crontab**: `crontab -l` (list crontab entries).
 - To generate a crontab entry use [this crontab generator](https://crontab-generator.org/).
+
+### User and Group management
+
+- **/etc/passwd**: Contains user account information, including username, UID, GID, home directory, and shell.
+
+- **/etc/shadow**: Contains encrypted passwords and password aging information.
+  
+  - **Example Entry**: `john:$6$abc123$...:18023:0:99999:7:::`
+    - `john`: Username.
+    - `$6$abc123$...`: Encrypted password.
+    - `18023`: Last password change (in days since Jan 1, 1970).
+    - `0`: Minimum number of days between changes.
+    - `99999`: Maximum number of days between changes.
+    - `7`: Days before expiration to warn the user.
+
+- **/etc/group**: Contains group information, including group name, GID, and members.
+
+#### Users
+
+**Creating Users**
+
+- **Command**: `adduser`
+  
+  - **Syntax**: `adduser [options] username`
+  - **Common Options**:
+    - `--home DIR`: Specify a custom home directory for the user.
+    - `--shell SHELL`: Specify the user's shell (e.g., `/bin/bash`).
+    - `--uid UID`: Specify the UID for the user.
+    - `--ingroup GROUP`: Add the user to a specific initial group.
+    - `--gecos GECOS`: Set GECOS fields (full name, room number, work phone, home phone).
+    - `--disabled-password`: Create a user without setting a password (useful for system users).
+    - `--expiredate EXPIRE_DATE`: Set an expiration date for the user account.
+
+- **Example**: `sudo adduser --shell /bin/bash john`
+
+- **Deleting Users**
+  
+  - **Command**: `deluser`
+    
+    - **Syntax**: `deluser [options] username`
+    - **Common Options**:
+      - `--remove-home`: Remove the user's home directory and mail spool.
+      - `--remove-all-files`: Remove all files owned by the user on the system.
+      - `--backup`: Create a backup of all files before deleting them.
+      - `--force`: Force removal even if the user is logged in.
+  
+  - **Example**: `sudo deluser --remove-home john`
+
+#### Password Management
+
+- **Setting a Password**: `passwd`
+  
+  - **Syntax**: `passwd username`
+  - Prompts the user to enter and confirm a new password.
+
+- **Example**: `sudo passwd john`
+
+- **Password Aging**: Controls how often a user must change their password.
+  
+  - **Command**: `chage`
+  - **Syntax**: `chage [options] username`
+  - **Common Options**:
+    - `-m`: Minimum number of days between password changes.
+    - `-M`: Maximum number of days a password is valid.
+    - `-W`: Number of days before expiration that a user is warned.
+    - `-E`: Account expiration date.
+
+- **Example**: `sudo chage -M 90 john`
+
+#### Groups
+
+- Use `groups [username]` to view groups a user is in
+
+- To add a user to a group use `usermod -aG` eg
+  
+  - `sudo usermod -aG developers john`
+
+- **Removing a User from a Group**
+  
+  **Method 1: Using the `gpasswd` Command**
+  
+  - **Command**: `gpasswd -d username groupname` eg:
+    
+    - `sudo gpasswd -d john developers`
+      
+      - This removes `john` from the `developers` group
+  
+  **Method 2: Using the `usermod` Command**
+  
+  - **Command**: `usermod -G group1,group2,... username`
+    - This method requires specifying all groups the user should remain in. It will remove the user from any groups not listed. eg
+      - `sudo usermod -G sudo john`
+
+- **Creating Groups**
+  
+  - **Command**: `groupadd`
+    
+    - **Syntax**: `groupadd [options] groupname`
+    - **Common Options**:
+      - `-g`: Specify the GID (Group ID) for the group.
+  
+  - **Example**: `sudo groupadd developers`
+
+- **Modifying Groups**
+  
+  - **Command**: `groupmod`
+    
+    - **Syntax**: `groupmod [options] groupname`
+    - **Common Options**:
+      - `-n`: Change the group name.
+      - `-g`: Change the GID of the group.
+  
+  - **Example**: `sudo groupmod -n devs developers`
+
+- **Deleting Groups**
+
+- **Command**: `groupdel`
+  
+  - **Syntax**: `groupdel groupname`
+
+- **Example**: `sudo groupdel devs`
+
+##### Special groups
+
+1. **`wheel`**: Members can execute any command with root privileges using `sudo`.(redHat)
+2. **`sudo`**: Members can execute commands as root using `sudo`.
+3. **`adm`**: Members can read system logs without needing `sudo`.
+4. **`systemd-journal`**: Members can view logs managed by `systemd-journald` using `journalctl`.
+5. **`systemd-network`**: Members can configure network interfaces and view network status.
+6. **`dialout`**: Members can use serial devices without `sudo`.
+7. **`audio`**: Members can access and use audio devices like speakers and microphones.
+8. **`video`**: Members can use video hardware, such as webcams and GPUs.
+9. **`lp`**: Members can manage printers and print jobs.
+10. **`plugdev`**: Members can mount and use removable storage devices.
+11. **`docker`**: Members can manage Docker containers, images, and networks without needing `sudo`.
+12. **`www-data`**: Members can read and write to web server directories, often used for web development.
+13. **`games`**: Members can read and write to game directories, useful for saving game progress or installing mods.
 
 ## Windows OS
 
@@ -155,7 +325,7 @@
   
   - _Use a passphrase for an added layer of security_
   
-  - **After configuting ssh keys** _disable password authentication and if possible also disable root login for more security._
+  - **After configuring ssh keys** _disable password authentication and if possible also disable root login for more security._
   
   - _For termux (mobile) the default ssh port is 8022_
   
@@ -268,7 +438,7 @@
   
   - Format a partition `format fs=[ntfs] [label="MyLabel"] [quick]`
     
-    - \*File system can be `ntfs`, `fat32` , `exfat`
+    - File system can be `ntfs`, `fat32` , `exfat`
     
     - _Omit quick for a full format_
   

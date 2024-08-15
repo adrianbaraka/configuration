@@ -12,13 +12,19 @@ alias please='sudo'
 alias py='python3'
 alias python='python3'
 alias rm='rm -i'
-alias bat='bat --paging=never'
+#alias bat='bat --paging=never' #Liked the paging
 alias ~='cd ~'
-alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
+alias dir='dir --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+
+
 
 #debian specific aliases
 alias venv='source /home/abc/Utilities/myenv/bin/activate'
 alias notes='marktext /home/abc/Documents/configuration/notes.md'
+alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
 
-#termux mobile special
+#termux specific
 alias notes='cdl /data/data/com.termux/files/home/storage/shared/Documents/configuration'
