@@ -408,7 +408,7 @@
 
 ## Disk Management
 
-- Use [disk drill](https://drive.google.com/file/d/1ztaaO9CBkXhGeojjeinbPzfPYUiEyDf2/view?usp=drive_link) to recover files and basically manage the drives.
+- Use [disk drill](https://mega.nz/file/eZVWxKwS#e0A6pGnHLqJAh9SlSbH2qkYjr3SRxMNht3gSb_aHMsU) to recover files and basically manage the drives.
 
 ### Windows
 
