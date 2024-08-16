@@ -1,14 +1,28 @@
 ## This file contains any additions to a bashrc file 
 
-#Include the current git branch if a git repo is detected in the prompt
 PROMPT_COMMAND='
-	PS1_CMD1=$(git branch --show-current 2>/dev/null);
-	PS1="\[\e[92;1m\]┌──(\[\e[22;3m\]\u\[\e[23;1m\]@\h\[\e[22m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;92m\]]\[\e[0m\] ";
-	if [ -n "$PS1_CMD1" ]; then
-	    PS1+="(\[\e[93m\]$PS1_CMD1\[\e[0m\])";
-	fi;
-	PS1+="\n\[\e[92;1m\]└─\[\e[38;5;202m\]\\$ \[\e[0m\]";
-	export PS1'
+    PS1="";
+
+    PS1+="\[\e[92;1m\]┌──";
+
+    # Include the virtual environment name if it exists
+    if [ -n "$VIRTUAL_ENV" ]; then
+        PS1+="\[\e[97m\](\[\e[94m\]$(basename $VIRTUAL_ENV)\[\e[97m\]) ";
+    fi;
+
+    PS1+="(\[\e[92;1;3m\]\u\[\e[0;92m\]@\h\[\e[0m\])\[\e[1m\]-[\[\e[38;5;38;3m\]\w\[\e[23;97m\]]\[\e[0m\] ";
+
+    # Include git branch if a git repo
+    PS1_CMD1=$(git branch --show-current 2>/dev/null);
+    if [ -n "$PS1_CMD1" ]; then
+        PS1+="(\[\e[93m\]$PS1_CMD1\[\e[0m\])";
+    fi;
+
+    PS1+="\n\[\e[92;1m\]└─\[\e[0m\]👀\[\e[38;5;202;1m\] \[\e[0m\]";
+    export PS1'
+
+#Root PS1 command
+PS1='┌──${debian_chroot:+($debian_chroot)} [\[\e[38;5;45;3m\]\t\[\e[0m\]] \[\e[91m\](\[\e[1m\]\u\[\e[22m\]@\h)\[\e[0m\]:[\[\e[91;3m\]\w\[\e[0m\]]\n└─\[\e[91m\]\$\[\e[0m\] '
 
 
 if [ -f ~/.bash_aliases ]; then
