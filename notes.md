@@ -43,10 +43,15 @@
 
 - Use `grep` to search for a specific one.
 
+- For built in shell commands use help eg `help read`
+  
+  - `help` lists all built in commands.
+
 ### Service management
 
 - Use [_stacer_](https://github.com/oguzhaninan/Stacer) to view all running processes or [_htop_](https://github.com/htop-dev/htop).
 - Default unit files are found in`/lib/systemd/system/`. *`grep` for .service files.*
+- Another location is `/etc/systemd/system`
 
 #### Systemctl
 
@@ -110,7 +115,11 @@
 
 - **Updating Repositories**: Run `sudo apt update` before installing packages.
 - **Search Package**: Use `apt search <package>` to search if a package is in the official repository.
-- **Install .deb Package**: Use `sudo dpkg -i <package path>` (e.g., `sudo dpkg -i /home/abc/Downloads/package.deb`).
+- **Install .deb Package**: Use `sudo dpkg -i <package path>` (e.g., `sudo dpkg -i /home/abc/Downloads/package.deb`).  A better one is use
+- `sudo apt install <package>`
+- Add `purge` to remove configuration files while uninstaling or after
+- `dpkg -l` list all installed packages.
+- `sudo xargs -a file.txt apt install -y` to install all files from a txt file
 
 ### Shell Operations
 
@@ -141,6 +150,37 @@
 - stdin 0 stdout 1 stderr 2. Redirect each to separate places with > or append with >>.
 
 - /dev/null is basically a black hole of files.
+
+---
+
+- To unhide files from whisker navigate to `~/.local/share/applications/` or `/usr/share/applications/` open the .desktop file and change `HIDDEN` to `false`.
+
+- `xdg-open .` Opens the file manager in the cwd.
+
+---
+
+- `man test` Is the man page for tests commonly used in if statements eg `
+  
+  ```bash
+     -d FILE
+            FILE exists and is a directory`
+  ```
+
+- a
+
+---
+
+- Settings > Window Manager > Keyboard, scroll down to Tile Window section More keyboard shortcuts
+
+---
+
+- Some `notify-send` icons for `-i` are 
+  
+  - dialog-information, help, info
+  
+  - dialog-warning, dialog-error, error
+  
+  - preferences-desktop, system-run, utilities-terminal, network-workgroup
 
 ### Crontab
 

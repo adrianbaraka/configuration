@@ -1,5 +1,7 @@
+## Linux
+
 | Command            | Description                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------------------- |
+| ------------------ |:--------------------------------------------------------------------------------------------:|
 | `pwd`              | Shows the current directory and path                                                         |
 | `cd`               | Change directory; e.g., `cd home`, `cd /bin`                                                 |
 | `ls`               | List directory contents                                                                      |
@@ -33,3 +35,21 @@
 | `exec bash`        | Replace the current shell session with a new instance of Bash, reloading configuration files |
 | `deactivate`       | Deactivate the virtual environment                                                           |
 | `ifconfig`         | View network devices                                                                         |
+| `xdg-open .`       | Opens the file manager in the cwd                                                            |
+| `start .`          | For windows opens file manager in cwd                                                        |
+
+
+
+
+
+## Windows
+
+| `start .` | Opens file manager in cwd |
+| --------- | ------------------------- |
+|           |                           |
+
+## Global
+
+| `code .` | Opens vs code in the cwd |
+| ------ | ------------------------ |
+|        |                          |
