@@ -6,6 +6,11 @@ cdl() {
     fi
 
     cd "$1" || return 1
-    ls
+    ls -la
+}
+
+#Git status alias
+gs(){
+    git status
 }
 
