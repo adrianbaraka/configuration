@@ -35,14 +35,43 @@ sudo apt install ./google-chrome-stable_current_amd64.
 #########################################################################################################################################################################
 #LightDM conf
 #Copy background image
-sudo cp -v conf-files/spiderman-home.jpeg /usr/share/images/desktop-
+#bash -c Executes the following string as a command in a new Bash shell.
 
-echo "[greeter]
-background = /usr/share/images/desktop-base/spiderman-man.jpeg
+mkdir -p /usr/share/images/desktop-base
+mkdir -p /etc/lightdm
+
+sudo cp -v conf-files/wallpapers/spiderman-home.jpeg /usr/share/images/desktop-base
+
+sudo bash -c 'echo "[greeter]
+background = /usr/share/images/desktop-base/spiderman-home.jpeg
 theme-name = Adwaita-dark
 icon-theme-name = gnome
 font-name = Lato Semi-Bold Italic 13
 position = 80%,center 36%,center
 indicators = ~spacer;~clock;~spacer;~session;~a11y;~power
-clock-format = %A, %H:%M:%S" > /etc/lightdm/lightdm-gtk-greeter.conf
+clock-format = %A, %H:%M:%S" > /etc/lightdm/lightdm-gtk-greeter.conf'
+
+
+#########################################################################################################################################################################
+
+#Add 1920*1080 resolution for second monitor
+#Set it to autostart on login
+
+mkdir -p ~/.config/autostart
+exec_path="$(dirname "$(pwd)")/Scripts/resolution.sh"
+
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Resolution add
+Comment=Add 1920*1080 resolution to secondary screen
+Exec=$exec_path
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false" > ~/.config/autostart/add-resolution.desktop
+
+
 

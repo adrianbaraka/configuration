@@ -182,6 +182,20 @@
   
   - preferences-desktop, system-run, utilities-terminal, network-workgroup
 
+---
+
+- Add 1920 * 1080 resolution to second monitor
+
+- `xrandr`  Identify the second display name
+
+- `cvt 1920 1080` New mode
+
+- `xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync` - Modeline
+
+- `xrandr --addmode <display_name> "1920x1080_60.00"` `Associate with display 
+
+- `xrandr --output <display_name> --mode "1920x1080_60.00"` Apply 
+
 ### Crontab
 
 - **Edit Crontab**: `crontab -e` (open crontab for editing).
