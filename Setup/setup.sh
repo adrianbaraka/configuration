@@ -2,8 +2,8 @@
 
 #This is my configuration for the XFCE Linux desktop environment
 
-##Variables
-# Declare an associative array to store shortcuts and their commands [150]
+#Variables
+#Declare an associative array to store shortcuts and their commands [150]
 declare -A shortcuts=(
     ["<Super>e"]="nautilus starred:///"
     ["Super_L"]="xfce4-popup-whiskermenu"
@@ -14,7 +14,7 @@ declare -A shortcuts=(
 
 # Define the theme and icon names [178]
 gtk_theme="Flat-Remix-GTK-Blue-Dark-Solid"
-icon_theme="kora"
+icon_theme="Flat-Remix-Blue-Dark"
 wm_theme="Flat-Remix-Dark-XFWM"
 mouse_theme="Bibata-Original-Ice"
 
@@ -27,6 +27,7 @@ mouse_theme="Bibata-Original-Ice"
 #Delete all panels
 xfconf-query --channel xfce4-panel --reset -R --property /panels
 xfconf-query --channel xfce4-panel --reset -R --property /plugins
+
 
 #Restart xfce panels
 xfce4-panel --restart
@@ -57,13 +58,12 @@ xfce4-panel --add pager
 xfce4-panel --add separator
 xfce4-panel --add clock
 xfce4-panel --add separator
+xfce4-panel --add cpugraph
 xfce4-panel --add power-manager-plugin
 xfce4-panel --add separator
 xfce4-panel --add actions
 
-#Whisker-menu
-mkdir -p ~/.config/xfce4/panel
-cp -v conf-files/whiskermenu-1.rc ~/.config/xfce4/panel
+
 
 #pager
 xfconf-query --channel xfce4-panel --property /plugins/plugin-3/miniature-view --create --type bool --set false
@@ -84,12 +84,14 @@ xfconf-query --channel xfce4-panel --property /plugins/plugin-5/tooltip-format -
 xfconf-query --channel xfce4-panel --property /plugins/plugin-6/expand --create --type bool --set true
 xfconf-query --channel xfce4-panel --property /plugins/plugin-6/style --create --type int --set 0
 
+
+
 #separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-8/style --create --type int --set 0
+xfconf-query --channel xfce4-panel --property /plugins/plugin-9/style --create --type int --set 0
 
 #Action buttons
-xfconf-query --channel xfce4-panel --property /plugins/plugin-9/appearance --create --type int --set 0
-xfconf-query --channel xfce4-panel --property /plugins/plugin-9/items --create --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string  --set -lock-screen --set -switch-user --set -separator --set -suspend --set -hibernate --set -hybrid-sleep --set -separator --set -shutdown --set -restart --set -separator --set +logout --set -logout-dialog
+xfconf-query --channel xfce4-panel --property /plugins/plugin-10/appearance --create --type int --set 0
+xfconf-query --channel xfce4-panel --property /plugins/plugin-10/items --create --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string  --set -lock-screen --set -switch-user --set -separator --set -suspend --set -hibernate --set -hybrid-sleep --set -separator --set -shutdown --set -restart --set -separator --set +logout --set -logout-dialog
 
 #Add a new panel
 ##### This is how to specify array values ####
@@ -107,11 +109,11 @@ xfconf-query --channel xfce4-panel --property /panels/panel-2/length --create --
 xfconf-query --channel xfce4-panel --property /panels/panel-2/position --create --type string --set "p=8;x=960;y=1055"
 
 #panel 2 fixed icon size
-xfconf-query --channel xfce4-panel --property /panels/panel-2/icon-size --create --type int --set 19
+xfconf-query --channel xfce4-panel --property /panels/panel-2/icon-size --create --type int --set 32
 
 
 echo "Select panel 2 in the options for all."
-notify-send -i preferences-desktop "Select panel 2 in the options for all."
+notify-send -i preferences-desktop "Setup" "Select panel 2 in the options for all."
 
 
 #Plugins for panel 2
@@ -124,18 +126,19 @@ xfce4-panel --add pulseaudio
 xfce4-panel --add notification-plugin
 
 #Tasklist
-xfconf-query --channel xfce4-panel --property /plugins/plugin-12/flat-buttons --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-12/show-handle --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-12/show-tooltips --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-12/show-labels --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-12/sort-order --create --type int --set 0
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/grouping --create --type bool --set true
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/flat-buttons --create --type bool --set false
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-handle --create --type bool --set false
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-tooltips --create --type bool --set true
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-labels --create --type bool --set false
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/sort-order --create --type int --set 0
 
 #Separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/expand --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/style --create --type int --set 0
+xfconf-query --channel xfce4-panel --property /plugins/plugin-14/expand --create --type bool --set true
+xfconf-query --channel xfce4-panel --property /plugins/plugin-14/style --create --type int --set 0
 
 #increase icon size systray
-xfconf-query --channel xfce4-panel --property /plugins/plugin-14/icon-size  --create --type int --set 29
+xfconf-query --channel xfce4-panel --property /plugins/plugin-15/icon-size  --create --type int --set 29
 
 #Wait 3 sec to view the panel
 sleep 3
@@ -145,6 +148,41 @@ xfconf-query --channel xfce4-panel --property /panels/panel-2/autohide-behavior 
 
 #Lock panel 2
 xfconf-query --channel xfce4-panel --property /panels/panel-2/position-locked --create --type bool --set true
+
+xfce4-panel --restart
+sleep 3
+
+#Whisker-menu
+mkdir -p ~/.config/xfce4/panel
+cp -v conf-files/whiskermenu-1.rc ~/.config/xfce4/panel
+
+#Cpugraph
+echo "TimeScale=0
+Size=50
+Frame=0
+Border=1
+Bars=0
+PerCore=0
+TrackedCore=0
+InTerminal=1
+StartupNotification=0
+ColorMode=0
+" > ~/.config/xfce4/panel/cpugraph-7.rc
+
+#Reduce size of audio control and battery plugin
+mkdir -p ~/.config/gtk-3.0
+
+echo "#pulseaudio-button * {
+    -gtk-icon-transform: scale(.6);
+}
+
+ #xfce4-power-manager-plugin * {
+    -gtk-icon-transform: scale(.8);
+}" >> ~/.config/gtk-3.0/gtk.css
+
+
+xfce4-panel --restart
+
 
 #Window layout
 xfconf-query --channel xsettings --property /Gtk/DecorationLayout --create --type string --set "menu:minimize,maximize,close"
@@ -296,7 +334,7 @@ xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/show-
 xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/show-tray-icon --create --type bool --set false
 
 echo "Confirm power manager ☠️☠️"
-notify-send -i dialog-error "Confirm power manager ☠️☠️"
+notify-send -i dialog-error "Setup" "Confirm power manager ☠️☠️"
 
 #########################################################################################################################################################################
 #Clipman
@@ -319,6 +357,29 @@ cat conf-files/bashrc >> ~/.bashrc
 cp -v conf-files/bash_aliases ~/.bash_aliases
 cp -v conf-files/bash_functions ~/.bash_functions 
 
-notify-send -i preferences-desktop "Restart to ensure all changes take effect"
-#Restart bash
-exec bash
+notify-send -i preferences-desktop "Setup" "Restart to ensure all changes take effect"
+
+#########################################################################################################################################################################
+# QT5 qt5ct
+echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> ~/.profile
+notify-send -i preferences-desktop "QT settings" "Use QT5ct to change theme for QT apps"
+
+#########################################################################################################################################################################
+#Add 1920*1080 resolution for second monitor
+#Set it to autostart on login
+
+mkdir -p ~/.config/autostart
+exec_path="$(dirname "$(pwd)")/Scripts/resolution.sh"
+
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Resolution add
+Comment=Add 1920*1080 resolution to secondary screen
+Exec=$exec_path
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false" > ~/.config/autostart/add-resolution.desktop

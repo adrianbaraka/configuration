@@ -12,7 +12,6 @@ alias please='sudo'
 alias py='python3'
 alias python='python3'
 alias rm='rm -i'
-#alias bat='bat --paging=never' #Liked the paging
 alias ~='cd ~'
 alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'

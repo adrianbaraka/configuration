@@ -1,6 +1,36 @@
+#sudo
+#network-manager
+#git
+
 #XDM
 #marktext
 
+
+xfce4-clipman
+xfce4-clipman-plugin
+xfce4-cpufreq-plugin
+xfce4-power-manager
+xfce4-power-manager-data
+xfce4-power-manager-plugins
+xfce4-screenshooter
+xfce4-taskmanager
+xfce4-terminal
+xfce4-whiskermenu-plugin
+xarchiver
+synaptic
+software-properties-gtk
+
+libreoffice
+libreoffice-help
+libreoffice-gtk3
+mythes-en-us
+hunspell-en-us
+libreoffice-help-en-us
+cups-bsd
+openclipart-libreoffice
+
+gnome-font-viewer
+font-manager
 gnome-calculator
 gnome-calendar
 gnome-characters
@@ -33,8 +63,7 @@ python3
 tree
 gnome-system-tools
 sqlitebrowser
-
-#for gsettings???
-#libglib2.0-bin
-#gsettings-desktop-schemas
+qt5ct
+adwaita-qt
+mousepad
 

@@ -5,6 +5,8 @@
 sudo apt update
 sudo apt upgrade
 
+
+
 #Install all programs in conf-files/programs.txt
 grep -vE '^\s*#|^\s*$' conf-files/programs.txt | sudo xargs -r apt install -y
 
@@ -54,24 +56,6 @@ clock-format = %A, %H:%M:%S" > /etc/lightdm/lightdm-gtk-greeter.conf'
 
 #########################################################################################################################################################################
 
-#Add 1920*1080 resolution for second monitor
-#Set it to autostart on login
-
-mkdir -p ~/.config/autostart
-exec_path="$(dirname "$(pwd)")/Scripts/resolution.sh"
-
-echo "[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=Resolution add
-Comment=Add 1920*1080 resolution to secondary screen
-Exec=$exec_path
-OnlyShowIn=XFCE;
-RunHook=0
-StartupNotify=false
-Terminal=false
-Hidden=false" > ~/.config/autostart/add-resolution.desktop
 
 
 
