@@ -4,7 +4,7 @@
 
 
 #Extract the archive
-tar -xvJf conf-files/conf-files.tar.xz
+tar -xvJf conf-files/conf-files.tar.xz -C ./conf-files
 
 
 #Variables
