@@ -20,17 +20,17 @@ xarchiver
 synaptic
 software-properties-gtk
 
-libreoffice
-libreoffice-help
-libreoffice-gtk3
-mythes-en-us
-hunspell-en-us
-libreoffice-help-en-us
-cups-bsd
-openclipart-libreoffice
+#libreoffice
+#libreoffice-help
+#libreoffice-gtk3
+#mythes-en-us
+#hunspell-en-us
+#libreoffice-help-en-us
+#cups-bsd
+#openclipart-libreoffice
 
 gnome-font-viewer
-font-manager
+#font-manager
 gnome-calculator
 gnome-calendar
 gnome-characters
@@ -66,4 +66,10 @@ sqlitebrowser
 qt5ct
 adwaita-qt
 mousepad
+simplescreenrecorder
+nautilus-admin
+gnome-control-center
 
+#Should be there by default but just in case
+xclip
+tar

@@ -182,6 +182,14 @@
   
   - preferences-desktop, system-run, utilities-terminal, network-workgroup
 
+- The icons are located in `usr/share/icons`or `~/.icons` in the selected icons folder.
+
+- Can search by example:
+  
+  - `find /usr/share/icons/ -name '*airplane*'`
+
+- 
+
 ---
 
 - Add 1920 * 1080 resolution to second monitor
@@ -195,6 +203,12 @@
 - `xrandr --addmode <display_name> "1920x1080_60.00"` `Associate with display 
 
 - `xrandr --output <display_name> --mode "1920x1080_60.00"` Apply 
+
+---
+
+- `sudo dmesg -w` learn more on this... keyboard mapping
+
+- 
 
 ### Crontab
 
@@ -535,4 +549,4 @@ assign letter=Z
 
 ### Port forwading serveo
 
-- **SSH Command**: `ssh -R 80:localhost:<port> serveo.net`
+**SSH Command**: `ssh -R 80:localhost:<port> serveo.net`

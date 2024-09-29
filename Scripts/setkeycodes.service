@@ -1,0 +1,10 @@
+[Unit]
+Description=Set custom keycode for wireless button
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setkeycodes e078 238
+
+[Install]
+WantedBy=multi-user.target

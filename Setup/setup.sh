@@ -2,6 +2,11 @@
 
 #This is my configuration for the XFCE Linux desktop environment
 
+
+#Extract the archive
+tar -xvJf conf-files/conf-files.tar.xz
+
+
 #Variables
 #Declare an associative array to store shortcuts and their commands [150]
 declare -A shortcuts=(
@@ -34,6 +39,15 @@ xfce4-panel --restart
 
 #Wait for panel to restart
 sleep 3
+
+xfconf-query --channel xfce4-panel --property /panels --type int --set 1
+
+#Restart xfce panels
+xfce4-panel --restart
+
+#Wait for panel to restart
+sleep 3
+
 
 #Change workspace names and count
 xfconf-query --channel xfwm4 --property /general/workspace_count --create --type int --set 2
@@ -132,6 +146,7 @@ xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-handle --c
 xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-tooltips --create --type bool --set true
 xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-labels --create --type bool --set false
 xfconf-query --channel xfce4-panel --property /plugins/plugin-13/sort-order --create --type int --set 0
+xfconf-query --channel xfce4-panel --property /plugins/plugin-13/include-all-workspaces --create --type bool --set false
 
 #Separator
 xfconf-query --channel xfce4-panel --property /plugins/plugin-14/expand --create --type bool --set true
@@ -383,3 +398,94 @@ RunHook=0
 StartupNotify=false
 Terminal=false
 Hidden=false" > ~/.config/autostart/add-resolution.desktop
+
+
+#########################################################################################################################################################################
+#Set up file templates
+mkdir -p ~/Templates
+
+# Basic text file
+touch ~/Templates/Text.txt
+
+# Office templates
+mkdir -p ~/Templates/Office
+touch ~/Templates/Office/Word.docx
+touch ~/Templates/Office/Excel.xlsx
+touch ~/Templates/Office/Presentation.pptx
+
+# Code templates
+mkdir -p ~/Templates/Code
+
+# C program
+touch ~/Templates/Code/1_C.c
+echo '#include <stdio.h>
+
+int main(){
+    printf("Hello World");
+    return 0;
+}' > ~/Templates/Code/1_C.c
+
+# C++ program
+touch ~/Templates/Code/2_C++.cpp
+echo '
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}' > ~/Templates/Code/2_C++.cpp
+
+# Java program
+touch ~/Templates/Code/3_Java.java
+echo 'public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}' > ~/Templates/Code/3_Java.java
+
+# Python
+touch ~/Templates/Code/4_Python.py
+
+# Bash script
+touch ~/Templates/Code/5_bash.sh
+echo '#!/bin/bash' > ~/Templates/Code/5_bash.sh
+# Web development templates
+mkdir -p ~/Templates/Code/Web
+
+# HTML
+touch ~/Templates/Code/Web/index.html
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>' > ~/Templates/Code/Web/index.html
+
+# CSS
+touch ~/Templates/Code/Web/styles.css
+
+# JavaScript
+touch ~/Templates/Code/Web/script.js
+
+
+
+#########################################################################################################################################################################
+#Nautilus Scripts
+mkdir -p ~/.local/share/nautilus/scripts
+
+#Open a file or directory in vs code
+cp -v "../Scripts/Open In VS Code" ~/.local/share/nautilus/scripts
+chmod 744 "$HOME/.local/share/nautilus/scripts/Open In VS Code"
+
+#Open a directory in baobab
+cp -v "../Scripts/Disk Usage Analyser" ~/.local/share/nautilus/scripts
+chmod 744 "$HOME/.local/share/nautilus/scripts/Disk Usage Analyser"
+
+cp -v "../Scripts/Copy Path" ~/.local/share/nautilus/scripts
+chmod 744 "$HOME/.local/share/nautilus/scripts/Copy Path"

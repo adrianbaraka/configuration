@@ -55,7 +55,14 @@ clock-format = %A, %H:%M:%S" > /etc/lightdm/lightdm-gtk-greeter.conf'
 
 
 #########################################################################################################################################################################
+#Recognize wireless button
+sudo cp -v ../Scripts/setkeycodes.service /etc/systemd/system
 
+#Enable the service for on startup
+sudo systemctl enable setkeycodes.service
 
+#Create a shortcut for it
+airplane_script_path="$(dirname "$(pwd)")/Scripts/airplane_mode.sh"
+xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/commands/custom/WLAN' --type 'string' --set "$airplane_script_path"
 
 
