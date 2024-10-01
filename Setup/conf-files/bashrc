@@ -21,26 +21,21 @@ PROMPT_COMMAND='
     PS1+="\n\[\e[92;1m\]└─\[\e[0m\]👀\[\e[38;5;202;1m\] \[\e[0m\]";
     export PS1'
 
-#Root PS1 command
-#PS1='┌──${debian_chroot:+($debian_chroot)} [\[\e[38;5;45;3m\]\t\[\e[0m\]] \[\e[91m\](\[\e[1m\]\u\[\e[22m\]@\h)\[\e[0m\]:[\[\e[91;3m\]\w\[\e[0m\]]\n└─\[\e[91m\]\$\[\e[0m\] '
-
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Source .bashfunctions file
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-#Include snap in path
-export PATH=$PATH:/snap/bin
+#ensure history is appended and written to file immediately
+shopt -s histappend
+export PROMPT_COMMAND='history -a; history -n'
+
+
 
 ##Start ssh ssh-agent and add the github key redirect output to /dev/null
 # Start the sshd service termux
@@ -49,4 +44,15 @@ export PATH=$PATH:/snap/bin
 # Initialize the ssh-agent
 #eval "$(ssh-agent -s)" > /dev/null 
 # Add the SSH key
-#ssh-add -q ~/.ssh/github_id_ed25519	
+#ssh-add -q ~/.ssh/github_id_ed25519
+
+#Root PS1 command
+#PS1='┌──${debian_chroot:+($debian_chroot)} [\[\e[38;5;45;3m\]\t\[\e[0m\]] \[\e[91m\](\[\e[1m\]\u\[\e[22m\]@\h)\[\e[0m\]:[\[\e[91;3m\]\w\[\e[0m\]]\n└─\[\e[91m\]\$\[\e[0m\] '
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#Include snap in path
+#export PATH=$PATH:/snap/bin
+	

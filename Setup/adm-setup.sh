@@ -33,6 +33,20 @@ sudo apt-get update && sudo apt-get install spotify-client
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.
 
+#Only Office
+mkdir -p ~/.gnupg
+chmod 700 ~/.gnupg
+gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+chmod 644 /tmp/onlyoffice.gpg
+sudo chown root:root /tmp/onlyoffice.gpg
+sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
+
+echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+
+sudo apt-get update
+
+sudo apt-get install onlyoffice-desktopeditors
+
 
 #########################################################################################################################################################################
 #LightDM conf
@@ -64,5 +78,13 @@ sudo systemctl enable setkeycodes.service
 #Create a shortcut for it
 airplane_script_path="$(dirname "$(pwd)")/Scripts/airplane_mode.sh"
 xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/commands/custom/WLAN' --type 'string' --set "$airplane_script_path"
+
+#########################################################################################################################################################################
+#Grub setup
+sudo cp -v conf-files/wallpapers/spiderman-upside.png /boot/grub
+
+sudo bash -c 'echo "GRUB_BACKGROUND=/boot/grub/spiderman-upside.png" >> /etc/default/grub'
+update-grub
+
 
 

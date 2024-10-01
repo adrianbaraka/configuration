@@ -393,7 +393,6 @@ Type=Application
 Name=Resolution add
 Comment=Add 1920*1080 resolution to secondary screen
 Exec=$exec_path
-OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false
 Terminal=false
@@ -487,5 +486,12 @@ chmod 744 "$HOME/.local/share/nautilus/scripts/Open In VS Code"
 cp -v "../Scripts/Disk Usage Analyser" ~/.local/share/nautilus/scripts
 chmod 744 "$HOME/.local/share/nautilus/scripts/Disk Usage Analyser"
 
+#Copy the absolute path of a file or directory selected
 cp -v "../Scripts/Copy Path" ~/.local/share/nautilus/scripts
 chmod 744 "$HOME/.local/share/nautilus/scripts/Copy Path"
+
+#########################################################################################################################################################################
+#Copy wallpapers pictures directory
+cp -v conf-files/wallpapers/avatar.jpeg ~/Pictures
+cp -v conf-files/wallpapers/home.png ~/Pictures
+

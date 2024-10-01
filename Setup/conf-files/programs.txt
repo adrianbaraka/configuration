@@ -16,21 +16,10 @@ xfce4-screenshooter
 xfce4-taskmanager
 xfce4-terminal
 xfce4-whiskermenu-plugin
-xarchiver
 synaptic
 software-properties-gtk
 
-#libreoffice
-#libreoffice-help
-#libreoffice-gtk3
-#mythes-en-us
-#hunspell-en-us
-#libreoffice-help-en-us
-#cups-bsd
-#openclipart-libreoffice
-
 gnome-font-viewer
-#font-manager
 gnome-calculator
 gnome-calendar
 gnome-characters
@@ -69,6 +58,11 @@ mousepad
 simplescreenrecorder
 nautilus-admin
 gnome-control-center
+libglib2.0-bin
+gsettings-desktop-schemas
+file-roller
+xdman
+
 
 #Should be there by default but just in case
 xclip
