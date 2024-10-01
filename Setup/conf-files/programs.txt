@@ -42,7 +42,6 @@ connman-ui
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
-firefox-esr
 qbittorrent
 vlc
 vlc-plugin-notify
