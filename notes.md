@@ -188,7 +188,7 @@
   
   - `find /usr/share/icons/ -name '*airplane*'`
 
-- 
+- git remote set-url origin git@github.com:adrianbaraka/configuration.git
 
 ---
 
@@ -491,6 +491,8 @@
     ```bash
     ssh -T git@github.com
     ```
+  
+  - If the repo was cloned using HTTPs it will continue authentication using that. To   view how it is authenticated use `git remote -v` and to change to SSH use `git remote set-url origin git@github.com:username/repo-name.git` and to HTTPs use `git remote set-url origin https://github.com/<your-username>/<your-repo-name>.git`
 
 ### Miscellaneous-git
 
