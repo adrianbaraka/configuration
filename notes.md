@@ -117,7 +117,7 @@
 - **Search Package**: Use `apt search <package>` to search if a package is in the official repository.
 - **Install .deb Package**: Use `sudo dpkg -i <package path>` (e.g., `sudo dpkg -i /home/abc/Downloads/package.deb`).  A better one is use
 - `sudo apt install <package>`
-- Add `purge` to remove configuration files while uninstaling or after
+- Add `purge` to remove configuration files while uninstalling or after
 - `dpkg -l` list all installed packages.
 - `sudo xargs -a file.txt apt install -y` to install all files from a txt file
 
@@ -208,7 +208,31 @@
 
 - `sudo dmesg -w` learn more on this... keyboard mapping
 
-- 
+---
+
+- To disable audio beep append `blacklist pcspkr` to the file `/etc/modprobe.d/blacklist.conf` then reboot the system
+
+---
+
+- Ensuring NetworkManager handles wifi connections: 
+  
+  - Disable wicd
+    
+    ```bash
+    sudo systemctl stop wicd
+    sudo systemctl disable wicd
+    ```
+  
+  - Disable ifupdown edit the file `/etc/network/interfaces`. Comment out any lines related to your Wi-Fi interface (likely labeled as `wlan0` or `wlp3s0`) eg
+  
+  - #auto wlan0
+     #iface wlan0 inet dhcp
+  
+  - Restart networkManager after `sudo systemctl restart NetworkManager`
+
+---
+
+- To set grub as first in the boot order run `sudo grub-install` then `sudo update-grub`
 
 ### Crontab
 
@@ -522,7 +546,7 @@
 
 - Delete all partitions or volumes of a selected disk `clean`
   
-  - `clean all` performs a thorough wipe of the disk making data recovery much more dificult
+  - `clean all` performs a thorough wipe of the disk making data recovery much more difficult
 
 Example workflow to format a disk and add 2 partitions:
 

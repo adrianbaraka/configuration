@@ -14,5 +14,19 @@
 | Baobab     | Disk usage analyser           | [apt]()                                                                                                                                                                                  |
 | Cmatrix    | Matrix like terminal movies   | [Github](https://github.com/abishekvashok/cmatrix) \| [Apt]()                                                                                                                            |
 | usbimager  | Create image files            | [Gitlab](https://gitlab.com/bztsrc/usbimager)                                                                                                                                            |
+| Avidemux   | Edit videos                   | [Site](https://avidemux.sourceforge.net/)                                                                                                                                                |
 |            |                               |                                                                                                                                                                                          |
 | *RipGrep*  | *A line-oriented search tool* | [GitHub](https://github.com/BurntSushi/ripgrep)                                                                                                                                          |
+
+Official sites to add repos or install apps not in the official debian repos
+
+| App                | Official Page                                                                                                                                                                                                       |
+|:------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Firefox            | [Site](https://support.mozilla.org/en-US/kb/install-firefox-linux?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=firefox-download-thanks#w_install-firefox-deb-package-for-debian-based-distributions) |
+| Google Chrome      | [Site](https://www.google.com/chrome/)                                                                                                                                                                              |
+| Visual Studio Code | [Site](https://code.visualstudio.com/docs/setup/linux)                                                                                                                                                              |
+| Only Office        | [Site](https://helpcenter.onlyoffice.com/installation/desktop-install-ubuntu.aspx)                                                                                                                                  |
+| Spotify            | [Site](https://www.spotify.com/us/download/linux/)                                                                                                                                                                  |
+| SuperTaxKart       | [Site](https://supertuxkart.net/Download)                                                                                                                                                                           |
+| Microsoft Edge     | [Site](https://www.microsoft.com/en-us/edge/download?form=MA13FJ)                                                                                                                                                   |
+|                    |                                                                                                                                                                                                                     |

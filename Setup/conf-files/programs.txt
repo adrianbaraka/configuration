@@ -1,14 +1,18 @@
 #sudo
 #network-manager
 #git
+#xfce4
 
-#XDM
-#marktext
+curl
+wget
 
-xfce4
+
+#### XFCE related ####
+
 xfce4-clipman
 xfce4-clipman-plugin
 xfce4-cpufreq-plugin
+xfce4-cpugraph-plugin
 xfce4-power-manager
 xfce4-power-manager-data
 xfce4-power-manager-plugins
@@ -16,29 +20,28 @@ xfce4-screenshooter
 xfce4-taskmanager
 xfce4-terminal
 xfce4-whiskermenu-plugin
+
+
+#### Utilities ####
+
 synaptic
 software-properties-gtk
-
 gnome-font-viewer
 gnome-calculator
 gnome-calendar
 gnome-characters
-cheese
-gnome-chess
-gnome-clocks
-cmatrix
 gnome-disk-utility
-nautilus 
-stacer
-gnome-nibbles
-supertuxkart
 gnome-sound-recorder
+gnome-clocks
+nautilus 
+nautilus-admin
+nautilus-extension-gnome-terminal
+cheese
+cmatrix
+stacer
 baobab
 htop
 blueman
-connman
-connman-gtk
-connman-ui
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -49,18 +52,19 @@ fastfetch
 bat
 python3
 tree
-gnome-system-tools
 sqlitebrowser
 qt5ct
 adwaita-qt
 mousepad
 simplescreenrecorder
-nautilus-admin
-gnome-control-center
 libglib2.0-bin
 gsettings-desktop-schemas
 file-roller
-xdman
+gnome-chess
+gnome-nibbles
+menulibre
+alacarte
+mugshot
 
 
 #Should be there by default but just in case
