@@ -403,76 +403,7 @@ Hidden=false" > ~/.config/autostart/add-resolution.desktop
 #Set up file templates
 mkdir -p ~/Templates
 
-# Basic text file
-touch ~/Templates/Text.txt
-
-# Office templates
-mkdir -p ~/Templates/Office
-touch ~/Templates/Office/Word.docx
-touch ~/Templates/Office/Excel.xlsx
-touch ~/Templates/Office/Presentation.pptx
-
-# Code templates
-mkdir -p ~/Templates/Code
-
-# C program
-touch ~/Templates/Code/1_C.c
-echo '#include <stdio.h>
-
-int main(){
-    printf("Hello World");
-    return 0;
-}' > ~/Templates/Code/1_C.c
-
-# C++ program
-touch ~/Templates/Code/2_C++.cpp
-echo '
-#include <iostream>
-using namespace std;
-
-int main() {
-  cout << "Hello World!";
-  return 0;
-}' > ~/Templates/Code/2_C++.cpp
-
-# Java program
-touch ~/Templates/Code/3_Java.java
-echo 'public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello World");
-  }
-}' > ~/Templates/Code/3_Java.java
-
-# Python
-touch ~/Templates/Code/4_Python.py
-
-# Bash script
-touch ~/Templates/Code/5_bash.sh
-echo '#!/bin/bash' > ~/Templates/Code/5_bash.sh
-# Web development templates
-mkdir -p ~/Templates/Code/Web
-
-# HTML
-touch ~/Templates/Code/Web/index.html
-echo '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>' > ~/Templates/Code/Web/index.html
-
-# CSS
-touch ~/Templates/Code/Web/styles.css
-
-# JavaScript
-touch ~/Templates/Code/Web/script.js
-
-
+cp -r conf-files/Templates/* ~/Templates
 
 #########################################################################################################################################################################
 #Nautilus Scripts
@@ -489,6 +420,11 @@ chmod 744 "$HOME/.local/share/nautilus/scripts/Disk Usage Analyser"
 #Copy the absolute path of a file or directory selected
 cp -v "../Scripts/Copy Path" ~/.local/share/nautilus/scripts
 chmod 744 "$HOME/.local/share/nautilus/scripts/Copy Path"
+
+#Install a .deb package
+cp -v "../Scripts/Install .deb Package" ~/.local/share/nautilus/scripts
+chmod 744 "$HOME/.local/share/nautilus/scripts/Install .deb Package"
+
 
 #########################################################################################################################################################################
 #Copy wallpapers pictures directory

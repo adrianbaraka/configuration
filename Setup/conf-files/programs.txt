@@ -65,6 +65,7 @@ gnome-nibbles
 menulibre
 alacarte
 mugshot
+ffmpegthumbnailer
 
 
 #Should be there by default but just in case

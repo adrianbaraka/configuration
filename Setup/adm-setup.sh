@@ -43,10 +43,12 @@ sudo bash -c 'echo "GRUB_BACKGROUND=/boot/grub/spiderman-upside.png" >> /etc/def
 sudo update-grub
 
 #########################################################################################################################################################################
-#Times new roman font
-sudo mkdir -p "/usr/share/fonts/Times New Roman"
+#Fonts
+sudo mkdir -p "/usr/share/fonts/User Installed"
 
-sudo cp -vr "conf-files/Times New Roman"/* "/usr/share/fonts/Times New Roman"
+sudo cp -vr "conf-files/Fonts"/* "/usr/share/fonts/User Installed"
+sudo fc-cache -fv
+
 
 
 #########################################################################################################################################################################

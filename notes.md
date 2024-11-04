@@ -188,7 +188,7 @@
   
   - `find /usr/share/icons/ -name '*airplane*'`
 
-- git remote set-url origin git@github.com:adrianbaraka/configuration.git
+- [Zenity](https://help.gnome.org/users/zenity/stable/) Can also be used to display info or get all sorts of info from the user using a GUI.
 
 ---
 
@@ -233,6 +233,14 @@
 ---
 
 - To set grub as first in the boot order run `sudo grub-install` then `sudo update-grub`
+
+---
+
+- Use `pkexec` to ask for authentication using a GUI.
+  
+  ```bash
+  pkexec nano /etc/hosts
+  ```
 
 ### Crontab
 
@@ -492,7 +500,11 @@
     ssh -T git@github.com
     ```
   
-  - If the repo was cloned using HTTPs it will continue authentication using that. To   view how it is authenticated use `git remote -v` and to change to SSH use `git remote set-url origin git@github.com:username/repo-name.git` and to HTTPs use `git remote set-url origin https://github.com/<your-username>/<your-repo-name>.git`
+  - If the repo was cloned using HTTPs it will continue authentication using that. To   view how it is authenticated use `git remote -v` .
+  
+  - To change to SSH use `git remote set-url origin git@github.com:username/repo-name.git` 
+  
+  - To HTTPs use `git remote set-url origin https://github.com/<your-username>/<your-repo-name>.git`
 
 ### Miscellaneous-git
 

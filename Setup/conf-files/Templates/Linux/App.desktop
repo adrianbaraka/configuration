@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MyApp
+GenericName=My Application
+Comment=Launch MyApp
+Exec=/path/to/executable %U
+Icon=/path/to/icon
+Terminal=false
+Categories=Utility;Development;
+Keywords=sample;app;
+StartupNotify=true
