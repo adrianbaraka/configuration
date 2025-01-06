@@ -66,6 +66,7 @@ menulibre
 alacarte
 mugshot
 ffmpegthumbnailer
+cairo-dock
 
 
 #Should be there by default but just in case
