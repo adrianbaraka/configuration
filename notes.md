@@ -224,9 +224,25 @@
     ```
   
   - Disable ifupdown edit the file `/etc/network/interfaces`. Comment out any lines related to your Wi-Fi interface (likely labeled as `wlan0` or `wlp3s0`) eg
-  
-  - #auto wlan0
-     #iface wlan0 inet dhcp
+    
+    ```bash
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+    
+    source /etc/network/interfaces.d/*
+    
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+    
+    # The primary network interface
+    allow-hotplug wlp2s0
+    #iface wlp2s0 inet dhcp
+    #	wpa-ssid ABC
+    #	wpa-psk  c
+    ```
+    
+    
   
   - Restart networkManager after `sudo systemctl restart NetworkManager`
 
@@ -242,10 +258,16 @@
   pkexec nano /etc/hosts
   ```
 
+---
+
+- [Cairo Dock]([Debian -- Details of package cairo-dock in trixie](https://packages.debian.org/trixie/cairo-dock)) to remove weird rectangle go to window manager tweaks > compositor > disable show shadows under docks
+
 ### Crontab
 
 - **Edit Crontab**: `crontab -e` (open crontab for editing).
+
 - **List Crontab**: `crontab -l` (list crontab entries).
+
 - To generate a crontab entry use [this crontab generator](https://crontab-generator.org/).
 
 ### User and Group management

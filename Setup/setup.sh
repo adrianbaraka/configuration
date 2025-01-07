@@ -421,13 +421,32 @@ chmod 744 "$HOME/.local/share/nautilus/scripts/Disk Usage Analyser"
 cp -v "../Scripts/Copy Path" ~/.local/share/nautilus/scripts
 chmod 744 "$HOME/.local/share/nautilus/scripts/Copy Path"
 
-#Install a .deb package
-cp -v "../Scripts/Install .deb Package" ~/.local/share/nautilus/scripts
-chmod 744 "$HOME/.local/share/nautilus/scripts/Install .deb Package"
+#Install app .deb/latpakref/appimage
+cp -v "../Scripts/Install App" ~/.local/share/nautilus/scripts
+chmod 744 "$HOME/.local/share/nautilus/scripts/Install App"
 
 
 #########################################################################################################################################################################
 #Copy wallpapers pictures directory
 cp -v conf-files/wallpapers/avatar.jpeg ~/Pictures
 cp -v conf-files/wallpapers/home.png ~/Pictures
+
+##########################################################################################################################################################################
+#Use super key properly
+#set to auto start
+
+#mkdir -p ~/.config/autostart
+
+#echo "[Desktop Entry]
+#Encoding=UTF-8
+#Version=0.9.4
+#Type=Application
+#Name=Start Xcape
+#Comment=Assign Super key properly
+#Exec=xcape -e 'Super_L=Alt_L|F1'
+#OnlyShowIn=XFCE;
+#RunHook=0
+#StartupNotify=false
+#Terminal=false
+#Hidden=false" > ~/.config/autostart/startXcape.desktop
 

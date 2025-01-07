@@ -52,9 +52,13 @@ sudo fc-cache -fv
 
 
 #########################################################################################################################################################################
+#disable audio beep
+
+sudo bash -c 'echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf'
+#########################################################################################################################################################################
 
 sudo apt update
 sudo apt upgrade
 
 #Install all programs in conf-files/programs.txt
-grep -vE '^\s*#|^\s*$' conf-files/programs.txt | sudo xargs -r apt install -y
+#grep -vE '^\s*#|^\s*$' conf-files/programs.txt | sudo xargs -r apt install -y

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Get the selected file or directory path from Nautilus
+FILE=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+
+# Check if the file is empty or not selected
+if [[ -z "$FILE" ]]; then
+    zenity --error --text="No file selected."
+    exit 1
+fi
+
+# Function to handle .deb files
+handle_deb() {
+    #zenity --info --text="Installing .deb package: $FILE"
+    x-terminal-emulator -e "pkexec bash -c 'apt install \"$FILE\"; exec bash'"
+}
+
+# Function to handle .AppImage files
+handle_appimage() {
+    chmod u+x "$FILE"
+    APP_NAME=$(basename "$FILE" .AppImage)
+    DESKTOP_FILE="$HOME/.local/share/applications/$APP_NAME.desktop"
+
+    cat > "$DESKTOP_FILE" << EOF
+[Desktop Entry]
+Type=Application
+Name=$APP_NAME
+Exec="$FILE"
+Icon=application-x-executable
+Terminal=false
+EOF
+
+    zenity --info --text=".AppImage made executable and desktop entry created at $DESKTOP_FILE"
+}
+
+# Function to handle .flatpakref files
+handle_flatpakref() {
+    #zenity --info --text="Installing .flatpakref file: $FILE"
+    x-terminal-emulator -e "bash -c 'echo \"flatpak install -y \\\"$FILE\\\"\"; flatpak install -y \"$FILE\"; exec bash'"
+}
+
+
+# Check the file extension and call the appropriate handler
+case "$FILE" in
+    *.deb)
+        handle_deb
+        ;;
+    *.AppImage)
+        handle_appimage
+        ;;
+    *.flatpakref)
+        handle_flatpakref
+        ;;
+    *)
+        zenity --error --text="Unsupported file type. Please select a .deb, .AppImage, or .flatpakref file."
+        exit 1
+        ;;
+esac

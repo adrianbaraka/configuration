@@ -66,6 +66,12 @@ menulibre
 alacarte
 mugshot
 ffmpegthumbnailer
+rar
+unrar
+mcomix
+libavcodec-extra
+libavcodec-extra61
+xcape
 
 
 #Should be there by default but just in case
