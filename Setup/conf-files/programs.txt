@@ -66,12 +66,14 @@ menulibre
 alacarte
 mugshot
 ffmpegthumbnailer
+<<<<<<< HEAD
 rar
 unrar
 mcomix
 libavcodec-extra
 libavcodec-extra61
 xcape
+cairo-dock
 
 
 #Should be there by default but just in case
