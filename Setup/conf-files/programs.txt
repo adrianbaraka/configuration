@@ -25,7 +25,7 @@ xfce4-whiskermenu-plugin
 #### Utilities ####
 
 synaptic
-software-properties-gtk
+#software-properties-gtk
 gnome-font-viewer
 gnome-calculator
 gnome-calendar
@@ -38,7 +38,7 @@ nautilus-admin
 nautilus-extension-gnome-terminal
 cheese
 cmatrix
-stacer
+#stacer
 baobab
 htop
 blueman
@@ -66,16 +66,30 @@ menulibre
 alacarte
 mugshot
 ffmpegthumbnailer
-<<<<<<< HEAD
-rar
-unrar
+#rar
+#unrar
 mcomix
 libavcodec-extra
 libavcodec-extra61
 xcape
 cairo-dock
+libjpeg62-turbo 
+libjpeg-dev
+tumbler 
+tumbler-plugins-extra
+libfuse2t64
+libreoffice-gnome
+evince
+gnome-online-accounts-gtk 
+gnome-weather
+loupe
+gnome-text-editor
+network-manager-gnome
+network-manager
+power-profiles-daemon
 
 
 #Should be there by default but just in case
 xclip
 tar
+gcc

@@ -238,13 +238,11 @@
     # The primary network interface
     allow-hotplug wlp2s0
     #iface wlp2s0 inet dhcp
-    #	wpa-ssid ABC
-    #	wpa-psk  c
+    #    wpa-ssid ABC
+    #    wpa-psk  c
     ```
-    
-    
-  
-  - Restart networkManager after `sudo systemctl restart NetworkManager`
+
+- Restart networkManager after `sudo systemctl restart NetworkManager`
 
 ---
 

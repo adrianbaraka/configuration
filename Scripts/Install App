@@ -48,6 +48,9 @@ case "$FILE" in
     *.AppImage)
         handle_appimage
         ;;
+    *.appImage)
+        handle_appimage
+        ;;
     *.flatpakref)
         handle_flatpakref
         ;;

@@ -193,6 +193,10 @@ echo "#pulseaudio-button * {
 
  #xfce4-power-manager-plugin * {
     -gtk-icon-transform: scale(.8);
+}
+
+#xfce4-notification-plugin * {
+  -gtk-icon-transform: scale(.6);
 }" >> ~/.config/gtk-3.0/gtk.css
 
 
