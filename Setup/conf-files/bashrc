@@ -33,7 +33,7 @@ fi
 
 #ensure history is appended and written to file immediately
 shopt -s histappend
-export PROMPT_COMMAND='history -a; history -n'
+#export PROMPT_COMMAND='history -a; history -n'
 
 
 
