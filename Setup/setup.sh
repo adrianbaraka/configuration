@@ -25,164 +25,12 @@ mouse_theme="Bibata-Original-Ice"
 
 
 #####################################################################################################################################################################################
-#Panel configuration
-#list all 
-#xfconf-query --channel xfce4-panel --list --verbose
-
-#Delete all panels
-xfconf-query --channel xfce4-panel --reset -R --property /panels
-xfconf-query --channel xfce4-panel --reset -R --property /plugins
-
-
-#Restart xfce panels
-xfce4-panel --restart
-
-#Wait for panel to restart
-sleep 3
-
-xfconf-query --channel xfce4-panel --property /panels --type int --set 1
-
-#Restart xfce panels
-xfce4-panel --restart
-
-#Wait for panel to restart
-sleep 3
-
 
 #Change workspace names and count
 xfconf-query --channel xfwm4 --property /general/workspace_count --create --type int --set 2
 xfconf-query --channel xfwm4 --property /general/workspace_names --create --type string --type string --set "  Home  " --set "  Code  "
 
-#Set panel 1 to full length
-xfconf-query --channel xfce4-panel --property /panels/panel-1/length --create --type int --set 100
 
-#Set row size to 40 
-xfconf-query --channel xfce4-panel --property /panels/panel-1/size --create --type int --set 40
-
-#Set panel 1 to top of the screen
-xfconf-query --channel xfce4-panel --property /panels/panel-1/position --create --type string --set "p=6;x=960;y=21"
-
-#Lock panel 1
-xfconf-query --channel xfce4-panel --property /panels/panel-1/position-locked --create --type bool --set true
-
-#Add plugins to panel 1
-xfce4-panel --add whiskermenu
-xfce4-panel --add separator
-xfce4-panel --add pager
-xfce4-panel --add separator
-xfce4-panel --add clock
-xfce4-panel --add separator
-xfce4-panel --add cpugraph
-xfce4-panel --add power-manager-plugin
-xfce4-panel --add separator
-xfce4-panel --add actions
-
-
-
-#pager
-xfconf-query --channel xfce4-panel --property /plugins/plugin-3/miniature-view --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-3/numbering --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-3/rows --create --type int --set 1
-
-#Separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-4/expand --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-4/style --create --type int --set 0
-
-#Clock
-xfconf-query --channel xfce4-panel --property /plugins/plugin-5/digital-layout --create --type int --set 3
-xfconf-query --channel xfce4-panel --property /plugins/plugin-5/digital-time-font --create --type string --set "C059 Bold Italic 14"
-xfconf-query --channel xfce4-panel --property /plugins/plugin-5/digital-time-format --create --type string --set "%H:%M:%S, %A"
-xfconf-query --channel xfce4-panel --property /plugins/plugin-5/tooltip-format --create --type string --set "Week %V"
-
-#Separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-6/expand --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-6/style --create --type int --set 0
-
-
-
-#separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-9/style --create --type int --set 0
-
-#Action buttons
-xfconf-query --channel xfce4-panel --property /plugins/plugin-10/appearance --create --type int --set 0
-xfconf-query --channel xfce4-panel --property /plugins/plugin-10/items --create --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string --type string  --set -lock-screen --set -switch-user --set -separator --set -suspend --set -hibernate --set -hybrid-sleep --set -separator --set -shutdown --set -restart --set -separator --set +logout --set -logout-dialog
-
-#Add a new panel
-##### This is how to specify array values ####
-xfconf-query --channel xfce4-panel --property /panels --type int --type int --set 1 --set 2
-xfce4-panel --restart
-
-#Wait for panel to restart
-sleep 3
-
-
-#Set panel 2 to full width
-xfconf-query --channel xfce4-panel --property /panels/panel-2/length --create --type int --set 100
-
-#Set panel 2 to bottom
-xfconf-query --channel xfce4-panel --property /panels/panel-2/position --create --type string --set "p=8;x=960;y=1055"
-
-#panel 2 fixed icon size
-xfconf-query --channel xfce4-panel --property /panels/panel-2/icon-size --create --type int --set 32
-
-
-echo "Select panel 2 in the options for all."
-notify-send -i preferences-desktop "Setup" "Select panel 2 in the options for all."
-
-
-#Plugins for panel 2
-xfce4-panel --add showdesktop
-xfce4-panel --add separator
-xfce4-panel --add tasklist
-xfce4-panel --add separator
-xfce4-panel --add systray
-xfce4-panel --add pulseaudio
-xfce4-panel --add notification-plugin
-
-#Tasklist
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/grouping --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/flat-buttons --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-handle --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-tooltips --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/show-labels --create --type bool --set false
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/sort-order --create --type int --set 0
-xfconf-query --channel xfce4-panel --property /plugins/plugin-13/include-all-workspaces --create --type bool --set false
-
-#Separator
-xfconf-query --channel xfce4-panel --property /plugins/plugin-14/expand --create --type bool --set true
-xfconf-query --channel xfce4-panel --property /plugins/plugin-14/style --create --type int --set 0
-
-#increase icon size systray
-xfconf-query --channel xfce4-panel --property /plugins/plugin-15/icon-size  --create --type int --set 29
-
-#Wait 3 sec to view the panel
-sleep 3
-
-#Set panel 2 to auto hide
-xfconf-query --channel xfce4-panel --property /panels/panel-2/autohide-behavior --create --type int --set 2
-
-#Lock panel 2
-xfconf-query --channel xfce4-panel --property /panels/panel-2/position-locked --create --type bool --set true
-
-xfce4-panel --restart
-sleep 3
-
-#Whisker-menu
-mkdir -p ~/.config/xfce4/panel
-cp -v conf-files/whiskermenu-1.rc ~/.config/xfce4/panel
-
-#Cpugraph
-echo "TimeScale=0
-Size=50
-Frame=0
-Border=1
-Bars=0
-PerCore=0
-TrackedCore=0
-InTerminal=1
-StartupNotification=0
-ColorMode=0
-" > ~/.config/xfce4/panel/cpugraph-7.rc
 
 #Reduce size of audio control and battery plugin
 mkdir -p ~/.config/gtk-3.0
@@ -233,12 +81,6 @@ for shortcut_suffix in "${!shortcuts[@]}"; do
     set_shortcut "$shortcut_suffix" "${shortcuts[$shortcut_suffix]}"
 done
 
-##Window placement
-#primary== R-ctrl
-xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/xfwm4/custom/<Primary>Up' --type 'string' --set 'tile_up_key'
-xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/xfwm4/custom/<Primary>Down' --type 'string' --set 'tile_down_key'
-xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/xfwm4/custom/<Primary>Left' --type 'string' --set 'tile_left_key'
-xfconf-query --create -c 'xfce4-keyboard-shortcuts' -p '/xfwm4/custom/<Primary>Right' --type 'string' --set 'tile_right_key'
 
 #########################################################################################################################################################################
 
@@ -292,6 +134,7 @@ current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
 current_wm_theme=$(xfconf-query -c xfwm4 -p /general/theme)
 current_GDM_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
 current_mouse_theme=$(xfconf-query -c xsettings -p /Gtk/CursorThemeName)
+
 
 if [ "$current_gtk_theme" == "$gtk_theme" ] && [ "$current_icon_theme" == "$icon_theme" ] && [ "$current_wm_theme" == "$wm_theme" ] && [ "$current_GDM_THEME" == "'$gtk_theme'" ] && [ "$current_mouse_theme" == "$mouse_theme" ]; then
     echo "Themes successfully applied!"
@@ -373,8 +216,9 @@ cp -v conf-files/terminalrc ~/.config/xfce4/terminal/terminalrc
 #########################################################################################################################################################################
 #Bash configurations
 cat conf-files/bashrc >> ~/.bashrc
-cp -v conf-files/bash_aliases ~/.bash_aliases
-cp -v conf-files/bash_functions ~/.bash_functions 
+
+ln -s "$(pwd)"/conf-files/bash_aliases ~/.bash_aliases
+ln -s "$(pwd)"/conf-files/bash_functions ~/.bash_functions
 
 notify-send -i preferences-desktop "Setup" "Restart to ensure all changes take effect"
 
@@ -407,50 +251,34 @@ Hidden=false" > ~/.config/autostart/add-resolution.desktop
 #Set up file templates
 mkdir -p ~/Templates
 
-cp -r conf-files/Templates/* ~/Templates
+#cp -r conf-files/Templates/* ~/Templates
+ln -s "$(pwd)"/conf-files/Templates ~/Templates
 
 #########################################################################################################################################################################
 #Nautilus Scripts
 mkdir -p ~/.local/share/nautilus/scripts
 
-#Open a file or directory in vs code
-cp -v "../Scripts/Open In VS Code" ~/.local/share/nautilus/scripts
-chmod 744 "$HOME/.local/share/nautilus/scripts/Open In VS Code"
-
-#Open a directory in baobab
-cp -v "../Scripts/Disk Usage Analyser" ~/.local/share/nautilus/scripts
-chmod 744 "$HOME/.local/share/nautilus/scripts/Disk Usage Analyser"
-
-#Copy the absolute path of a file or directory selected
-cp -v "../Scripts/Copy Path" ~/.local/share/nautilus/scripts
-chmod 744 "$HOME/.local/share/nautilus/scripts/Copy Path"
-
-#Install app .deb/latpakref/appimage
-cp -v "../Scripts/Install App" ~/.local/share/nautilus/scripts
-chmod 744 "$HOME/.local/share/nautilus/scripts/Install App"
-
-
+ln -sv "$(dirname "$(pwd)")"/Scripts/nautilus/* ~/.local/share/nautilus/scripts
 #########################################################################################################################################################################
 #Copy wallpapers pictures directory
 cp -v conf-files/wallpapers/avatar.jpeg ~/Pictures
 cp -v conf-files/wallpapers/home.png ~/Pictures
 
 ##########################################################################################################################################################################
-#Use super key properly
-#set to auto start
+#Start ssh-agent on login
+mkdir -p ~/.config/autostart
+exec_path2="$(dirname "$(pwd)")/Scripts/ssh-agent.sh"
 
-#mkdir -p ~/.config/autostart
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Start SSH-agent
+Comment=Start ssh-agent
+Exec=$exec_path2
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false" > ~/.config/autostart/ssh-agent.desktop
 
-#echo "[Desktop Entry]
-#Encoding=UTF-8
-#Version=0.9.4
-#Type=Application
-#Name=Start Xcape
-#Comment=Assign Super key properly
-#Exec=xcape -e 'Super_L=Alt_L|F1'
-#OnlyShowIn=XFCE;
-#RunHook=0
-#StartupNotify=false
-#Terminal=false
-#Hidden=false" > ~/.config/autostart/startXcape.desktop
 

@@ -258,7 +258,7 @@
 
 ---
 
-- [Cairo Dock]([Debian -- Details of package cairo-dock in trixie](https://packages.debian.org/trixie/cairo-dock)) to remove weird rectangle go to window manager tweaks > compositor > disable show shadows under docks
+- [Cairo Dock](https://packages.debian.org/trixie/cairo-dock) to remove weird rectangle go to window manager tweaks > compositor > disable show shadows under docks
 
 ### Crontab
 
@@ -423,6 +423,7 @@
       Hostname ipAddress (192.168.0.103)
       Port port ssh (22)
       User user you want to login as (root)
+      IdentityFile ~/.ssh/debian_id_ed25519
   ```
 
 - Can now login using `ssh debianhome`.
@@ -437,7 +438,9 @@
   
   - -C "Comment"
   
-  - -t ed25519 _encryption type_
+  - -t ed25519 _encryption type
+
+- If a custom name was used for the key must specify the location of the key using the -i option like so. `ssh -i ~/.ssh/debian_id_ed25519 user@server-ip` or in the `~/.ssh/config` file  as `IdentityFile`
 
 - ssh server configuration file location `/etc/ssh/sshd_config` , on termux this file can be located at `/data/data/com.termux/files/usr/etc/ssh`.
   
@@ -608,3 +611,23 @@ assign letter=Z
 ### Port forwading serveo
 
 **SSH Command**: `ssh -R 80:localhost:<port> serveo.net`
+
+## Docker
+
+- In Dockerfile `CMD` any command line arguements in docker run replace the command while `ENTRYPOINT` the arguements are appended to the command.
+
+- For networking docker containers can resolve to each other through the container name.
+
+- For named volumes eg `docker run -v data_volume:/var/lib/mysql mysql` . This command creates a storage location at `/var/lib/docker/volumes` where the data inside the container will persist. (Volume Mounting)
+
+- To define the location instead `docker run -v /data:/var/lib/mysql mysql`. Starts `host-file-system:container-file-system`. (Bind Mounting)
+
+- Ports, map container ports to host port. Uses -p eg `docker run -p 8096:8096 jellyfin`. Starts `Host-port:Container Port`.
+
+- `--restart=unless-stopped` option is best as a container will start say on reboot auto.
+
+- Docker compose file must be named `docker-compose.yaml`. Any commands specific to it must be run in the same directory the file is in.
+
+- To start `docker compose up -d`. To stop `docker compose down` 
+
+- To view logs of containers started from docker compose run `docker compose logs` . Common options like `-f` apply.

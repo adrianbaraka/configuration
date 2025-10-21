@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get the selected file or directory path from Nautilus
+DIR_PATH=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+
+notify-send -i  kate "Kate" "Opening: $DIR_PATH in Kate"
+
+#Add nvm to path
+export NVM_DIR="$HOME/.nvm"
+ [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+ [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Open Kate with the selected file or directory
+kate "$DIR_PATH"

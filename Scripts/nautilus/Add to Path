@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Get the selected file path from Nautilus
+SFILE=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+
+# Check if selected is a file
+if [ ! -f "$SFILE" ]; then
+    zenity --error --text="Not a file."
+    exit 1
+fi
+
+# Ensure ~/.local/bin exists
+mkdir -p "$HOME/.local/bin"
+
+# Make the file executable
+chmod u+x "$SFILE"
+
+# Build link path
+LINK_PATH="$HOME/.local/bin/$(basename "$SFILE")"
+
+# Check if link already exists
+if [ -e "$LINK_PATH" ]; then
+    zenity --warning --text="A file or link named $(basename "$SFILE") already exists in ~/.local/bin"
+    exit 1
+fi
+
+# Create symlink
+if ln -s "$SFILE" "$LINK_PATH"; then
+    zenity --info --text="Added $(basename "$SFILE") to PATH."
+else
+    zenity --error --text="An error occurred while creating the symlink."
+fi

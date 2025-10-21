@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Get the selected file or directory path from Nautilus
+DIR_PATH=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+
+notify-send -i  mediainfo "Media Info" "Opening: $DIR_PATH in Media Info"
+
+# Open media info with the selected file
+mediainfo-gui "$DIR_PATH"

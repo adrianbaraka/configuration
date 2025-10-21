@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Check if input folder was provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <folder_path>"
+    exit 1
+fi
+
+INPUT_FOLDER="$1"
+
+# Check if the folder exists
+if [ ! -d "$INPUT_FOLDER" ]; then
+    echo "Error: Folder '$INPUT_FOLDER' does not exist."
+    exit 1
+fi
+
+# Set the quality (you can change this)
+QUALITY=10
+
+# Initialize thumbnail index
+INDEX=1
+
+# Loop through video files (adjust extensions as needed)
+find "$INPUT_FOLDER" -type f \( -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.avi" \) | while read -r FILE
+do
+    echo "Generating thumbnail $INDEX for file: $FILE"
+
+    # Generate thumbnail
+    ffmpegthumbnailer -i "$FILE" -o "$INDEX" -q $QUALITY
+
+    if [ $? -ne 0 ]; then
+        echo "Failed to generate thumbnail for $FILE"
+    fi
+
+    # Increment index
+    INDEX=$((INDEX + 1))
+done
+
+echo "Thumbnail generation complete."

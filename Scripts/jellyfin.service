@@ -1,0 +1,10 @@
+[Unit]
+Description=Start the Jellyfin server Container. 
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker start goofy_heisenberg
+
+[Install]
+WantedBy=multi-user.target

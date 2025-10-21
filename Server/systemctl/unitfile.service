@@ -1,0 +1,17 @@
+[Unit]
+Description=Next.js Application
+After=network.target
+
+[Service]
+Type=simple
+User=yourusername  # Replace with the username you want to run the app as
+Group=yourusername # Replace with the group
+WorkingDirectory=/path/to/your/nextjs/app  # Replace with the path to your Next.js app
+ExecStart=/usr/bin/npm start # Or "yarn start", depending on your package manager
+Restart=always
+Environment=NODE_ENV=production
+# If you need to set other environment variables, add them here
+# Environment=MY_VAR=my_value
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,31 @@
+services:
+  # Komga books
+  komga:
+      image: gotson/komga
+      container_name: komga
+      ports:
+          - 25600:25600
+      environment:
+        - TZ=Africa/Nairobi
+      restart: unless-stopped
+      volumes:
+        - type: bind
+          source: /mnt/061CBD6D1CBD57FF/Media-Server/Configs/komga/config
+          target: /config
+        - type: bind
+          source: /mnt/061CBD6D1CBD57FF/Media-Server/Media/Books
+          target: /data
+  # Jellyfin media
+  jellyfin:
+        image: jellyfin/jellyfin
+        container_name: jellyfin
+        ports:
+          - "8096:8096"
+        restart: unless-stopped
+        environment:
+          - TZ=Africa/Nairobi
+        volumes:
+             - "/mnt/061CBD6D1CBD57FF/Media-Server/Configs/jellyfin/cache:/cache"
+             - "/mnt/061CBD6D1CBD57FF/Media-Server/Configs/jellyfin/config:/config"
+             - "/mnt/061CBD6D1CBD57FF/Media-Server/Media:/media"
+        

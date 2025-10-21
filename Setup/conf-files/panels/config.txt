@@ -1,0 +1,115 @@
+/configver 2
+/panels [<1>, <2>]
+/panels/dark-mode false
+/panels/panel-1/autohide-behavior uint32 0
+/panels/panel-1/length 100.0
+/panels/panel-1/output-name 'Automatic'
+/panels/panel-1/plugin-ids [<1>, <2>, <3>, <4>, <5>, <6>, <7>, <8>, <9>, <10>]
+/panels/panel-1/position 'p=6;x=960;y=21'
+/panels/panel-1/position-locked true
+/panels/panel-1/size uint32 40
+/panels/panel-1/span-monitors false
+/panels/panel-2/autohide-behavior uint32 1
+/panels/panel-2/border-width uint32 1
+/panels/panel-2/icon-size uint32 0
+/panels/panel-2/length 1.0
+/panels/panel-2/length-adjust true
+/panels/panel-2/mode uint32 0
+/panels/panel-2/nrows uint32 1
+/panels/panel-2/plugin-ids [<14>, <16>, <17>, <19>, <18>, <20>, <12>, <21>, <11>]
+/panels/panel-2/position 'p=4;x=1871;y=663'
+/panels/panel-2/position-locked true
+/panels/panel-2/size uint32 47
+/plugins/clipman/settings/enable-actions true
+/plugins/clipman/settings/max-texts-in-history 30
+/plugins/clipman/settings/show-qr-code true
+/plugins/clipman/tweaks/max-menu-items 10
+/plugins/clipman/tweaks/never-confirm-history-clear false
+/plugins/clipman/tweaks/paste-on-activate uint32 1
+/plugins/clipman/tweaks/skip-action-on-key-down false
+/plugins/plugin-1 'whiskermenu'
+/plugins/plugin-1/button-icon 'emblem-debian'
+/plugins/plugin-1/favorites [<'org.gnome.Nautilus.desktop'>, <'firefox.desktop'>, <'xfce4-terminal-emulator.desktop'>, <'spotify.desktop'>, <'koodo-reader.desktop'>, <'onlyoffice-desktopeditors.desktop'>, <'code.desktop'>, <'io.missioncenter.MissionCenter.desktop'>]
+/plugins/plugin-1/favorites-in-recent true
+/plugins/plugin-1/menu-width 479
+/plugins/plugin-1/position-categories-alternate true
+/plugins/plugin-1/position-profile-alternate true
+/plugins/plugin-1/recent [<'synaptic.desktop'>, <'org.gnome.Nautilus.desktop'>, <'org.gnome.DiskUtility.desktop'>, <'org.gnome.baobab.desktop'>, <'org.gnome.Epiphany.WebApp_d5d0ca014f90e479ab7ca186f42f72935360e857.desktop'>, <'winboat-0.8.7-x86_64.desktop'>, <'msedge-lodlkdfmihgonocnmddehnfgiljnadcf-Default.desktop'>, <'firefox.desktop'>, <'msedge-akkheaabpnkfhcaebdhneikfekamanod-Profile_1.desktop'>, <'xfce4-terminal-emulator.desktop'>]
+/plugins/plugin-1/view-mode 0
+/plugins/plugin-10 'actions'
+/plugins/plugin-10/appearance 0
+/plugins/plugin-10/items [<'-lock-screen'>, <'-switch-user'>, <'-separator'>, <'-suspend'>, <'-hibernate'>, <'-hybrid-sleep'>, <'-separator'>, <'-shutdown'>, <'-restart'>, <'-separator'>, <'+logout'>, <'-logout-dialog'>]
+/plugins/plugin-11 'showdesktop'
+/plugins/plugin-11/show-on-hover true
+/plugins/plugin-12 'netload'
+/plugins/plugin-14 'systray'
+/plugins/plugin-14/hidden-items [<'_tllABP3F6'>, <'FZwakFcSCv'>, <'4VD4SO3Ad7'>, <'HE-p4WeTNT'>, <'ExDoOkdO8G'>, <'cortile'>, <'QdKZ8nJkzU'>, <'tkyJ4qHGc3'>, <'blueman'>, <'P8WyWmhyir'>, <'n9M1qSj2RH'>, <'XPnjiCgjHW'>, <'pLbUUIzat_'>, <'uLJytybZS6'>, <'lxLedj-pbk'>, <'B1xRQRL4rp'>, <'Ry29zr5gxG'>, <'XsQtEToaLQ'>, <'KClock daemon'>, <'H6rDQ-qj8T'>, <'uAL4L9Tdl-'>, <'4IEhtUsS2L'>, <'CoreTime'>, <'FP8sSMSi1_'>, <'kok-omI5qX'>, <'jcBanbD_9z'>, <'AKwW_J52b5'>, <'JBRNjxfvuW'>, <'fkpPiCdPxA'>, <'CzEjmgpaAD'>, <'Kq32YdqfAj'>, <'zLjcBc9Aiq'>, <'uhRB1jCVyC'>, <'rnl-loLKWl'>, <'-Vih5HtIE-'>, <'98A1o1g5Ss'>, <'3-Tq9lw3DY'>, <'chrome_status_icon_1'>, <'dzoYHmQ68u'>, <'2VB1OjFfwy'>, <'3YEBRimhP6'>, <'SB84eDrn_A'>, <'_4QqQHlZPu'>, <'y5TxRIxAJ9'>, <'vlc'>, <'clZerXW8Fc'>, <'qBittorrent'>, <'SimpleScreenRecorder'>, <'cY_OJtEsfx'>, <'PitpkyMDYu'>, <'Wb8o6DpDtC'>, <'pBAIadP8tX'>, <'pOcbqUS-j8'>, <'RIeyN9LrAW'>, <'virt-manager'>, <'IYuh6iZGD8'>, <'nXvSTXJLnA'>, <'KDE Connect Indicator'>, <'q9ZBeIoPIz'>]
+/plugins/plugin-14/hidden-legacy-items [<'wi-fi network connection “abc” active: abc (63%)'>, <'wi-fi network connection “abc” active: abc (82%)'>, <'reminders'>, <'onboard'>, <'clipman'>, <'networkmanager applet'>, <'wi-fi network connection “abc” active: abc (79%)'>, <'wi-fi network connection “abc” active: abc (81%)'>, <'evolution-alarm-notify'>, <'wi-fi network connection “abc” active: abc (100%)'>, <'polkit-mate-authentication-agent-1'>]
+/plugins/plugin-14/hide-new-items true
+/plugins/plugin-14/icon-size 29
+/plugins/plugin-14/known-items [<'n9M1qSj2RH'>, <'PitpkyMDYu'>, <'Wb8o6DpDtC'>, <'clZerXW8Fc'>, <'pOcbqUS-j8'>, <'nXvSTXJLnA'>, <'virt-manager'>, <'RIeyN9LrAW'>, <'tkyJ4qHGc3'>, <'chrome_status_icon_1'>, <'uhRB1jCVyC'>, <'cY_OJtEsfx'>, <'XPnjiCgjHW'>, <'q9ZBeIoPIz'>, <'H6rDQ-qj8T'>, <'HE-p4WeTNT'>, <'pLbUUIzat_'>, <'98A1o1g5Ss'>, <'P8WyWmhyir'>, <'zLjcBc9Aiq'>, <'FP8sSMSi1_'>, <'B1xRQRL4rp'>, <'AKwW_J52b5'>, <'CzEjmgpaAD'>, <'SB84eDrn_A'>, <'Ry29zr5gxG'>, <'y5TxRIxAJ9'>, <'rnl-loLKWl'>, <'ExDoOkdO8G'>, <'FZwakFcSCv'>, <'_4QqQHlZPu'>, <'fkpPiCdPxA'>, <'4VD4SO3Ad7'>, <'4IEhtUsS2L'>, <'JBRNjxfvuW'>, <'dzoYHmQ68u'>, <'QdKZ8nJkzU'>, <'uAL4L9Tdl-'>, <'XsQtEToaLQ'>, <'SimpleScreenRecorder'>, <'KDE Connect Indicator'>, <'3-Tq9lw3DY'>, <'IYuh6iZGD8'>, <'pBAIadP8tX'>, <'jcBanbD_9z'>, <'uLJytybZS6'>, <'KClock daemon'>, <'3YEBRimhP6'>, <'CoreTime'>, <'lxLedj-pbk'>, <'kok-omI5qX'>, <'Kq32YdqfAj'>, <'_tllABP3F6'>, <'2VB1OjFfwy'>, <'-Vih5HtIE-'>, <'qBittorrent'>, <'vlc'>, <'blueman'>, <'cortile'>]
+/plugins/plugin-14/known-legacy-items [<'wi-fi network connection “abc” active: abc (63%)'>, <'polkit-mate-authentication-agent-1'>, <'onboard'>, <'wi-fi network connection “abc” active: abc (82%)'>, <'wi-fi network connection “abc” active: abc (79%)'>, <'wi-fi network connection “abc” active: abc (81%)'>, <'reminders'>, <'wi-fi network connection “abc” active: abc (100%)'>, <'evolution-alarm-notify'>, <'networkmanager applet'>, <'clipman'>]
+/plugins/plugin-14/menu-is-primary true
+/plugins/plugin-14/single-row true
+/plugins/plugin-14/square-icons true
+/plugins/plugin-14/symbolic-icons false
+/plugins/plugin-16 'pulseaudio'
+/plugins/plugin-16/enable-keyboard-shortcuts true
+/plugins/plugin-16/known-players ';Chromium;firefox;Infinix SMART 9 HD;Microsoft Edge;org.gnome.Totem;spotify;tor browser;vlc;zen'
+/plugins/plugin-16/persistent-players ''
+/plugins/plugin-16/rec-indicator-persistent true
+/plugins/plugin-17 'notification-plugin'
+/plugins/plugin-18 'cpufreq'
+/plugins/plugin-19 'separator'
+/plugins/plugin-19/expand false
+/plugins/plugin-19/style uint32 3
+/plugins/plugin-2 'separator'
+/plugins/plugin-20 'separator'
+/plugins/plugin-20/style uint32 3
+/plugins/plugin-21 'separator'
+/plugins/plugin-3 'pager'
+/plugins/plugin-3/miniature-view false
+/plugins/plugin-3/numbering false
+/plugins/plugin-3/rows uint32 1
+/plugins/plugin-3/wrap-workspaces false
+/plugins/plugin-4 'separator'
+/plugins/plugin-4/expand true
+/plugins/plugin-4/style 0
+/plugins/plugin-5 'clock'
+/plugins/plugin-5/digital-layout 3
+/plugins/plugin-5/digital-time-font 'C059 Bold Italic 14'
+/plugins/plugin-5/digital-time-format '%H:%M:%S, %A'
+/plugins/plugin-5/tooltip-format 'Week %V'
+/plugins/plugin-6 'separator'
+/plugins/plugin-6/expand true
+/plugins/plugin-6/style uint32 0
+/plugins/plugin-7 'cpugraph'
+/plugins/plugin-7/background [<1.0>, <1.0>, <1.0>, <0.0>]
+/plugins/plugin-7/bars 0
+/plugins/plugin-7/border 1
+/plugins/plugin-7/color-mode 0
+/plugins/plugin-7/command ''
+/plugins/plugin-7/foreground-1 [<0.0>, <1.0>, <0.0>, <1.0>]
+/plugins/plugin-7/foreground-2 [<1.0>, <0.0>, <0.0>, <1.0>]
+/plugins/plugin-7/foreground-3 [<0.0>, <0.0>, <1.0>, <1.0>]
+/plugins/plugin-7/foreground-iowait [<0.20000000000000001>, <0.90000000000000002>, <0.40000000000000002>, <1.0>]
+/plugins/plugin-7/foreground-nice [<0.90000000000000002>, <0.80000000000000004>, <0.20000000000000001>, <1.0>]
+/plugins/plugin-7/foreground-system [<0.90000000000000002>, <0.10000000000000001>, <0.10000000000000001>, <1.0>]
+/plugins/plugin-7/foreground-user [<0.10000000000000001>, <0.40000000000000002>, <0.90000000000000002>, <1.0>]
+/plugins/plugin-7/frame 0
+/plugins/plugin-7/in-terminal 1
+/plugins/plugin-7/load-threshold 0
+/plugins/plugin-7/mode 1
+/plugins/plugin-7/per-core 0
+/plugins/plugin-7/per-core-spacing 1
+/plugins/plugin-7/size 50
+/plugins/plugin-7/smt-issues 0
+/plugins/plugin-7/smt-issues-color [<0.90000000000000002>, <0.0>, <0.0>, <1.0>]
+/plugins/plugin-7/smt-stats 0
+/plugins/plugin-7/startup-notification 0
+/plugins/plugin-7/time-scale 0
+/plugins/plugin-7/tracked-core 0
+/plugins/plugin-7/update-interval 2
+/plugins/plugin-8 'power-manager-plugin'
+/plugins/plugin-9 'separator'
+/plugins/plugin-9/style 0

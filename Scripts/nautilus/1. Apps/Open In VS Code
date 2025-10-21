@@ -3,7 +3,7 @@
 # Get the selected file or directory path from Nautilus
 DIR_PATH=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
 
-notify-send -i  visual-studio-code "VS Code" "Opening: $DIR_PATH in Visual Studio Code"
+notify-send -i  vstudio "Visual Studio Code" "Opening: $DIR_PATH in Visual Studio Code"
 
 # Open Visual Studio Code with the selected file or directory
 code "$DIR_PATH"

@@ -1,25 +1,6 @@
 #!/bin/bash
 
-#This is the configuration that require admin priviledges
-
-#########################################################################################################################################################################
-#LightDM conf
-#Copy background image
-#bash -c Executes the following string as a command in a new Bash shell.
-
-mkdir -p /usr/share/images/desktop-base
-mkdir -p /etc/lightdm
-
-sudo cp -v conf-files/wallpapers/spiderman-home.jpeg /usr/share/images/desktop-base
-
-sudo bash -c 'echo "[greeter]
-background = /usr/share/images/desktop-base/spiderman-home.jpeg
-theme-name = Adwaita-dark
-icon-theme-name = gnome
-font-name = Lato Semi-Bold Italic 13
-position = 80%,center 36%,center
-indicators = ~spacer;~clock;~spacer;~session;~a11y;~power
-clock-format = %A, %H:%M:%S" > /etc/lightdm/lightdm-gtk-greeter.conf'
+#This is the configuration that require admin priviledge
 
 
 #########################################################################################################################################################################
@@ -56,9 +37,15 @@ sudo fc-cache -fv
 
 sudo bash -c 'echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf'
 #########################################################################################################################################################################
+# cpu governor to performance
+sudo cp -v "$(dirname "$(pwd)")"/Scripts/cpuPower.service /etc/systemd/system
 
-sudo apt update
-sudo apt upgrade
+sudo systemctl enable cpuPower.service
+
+#########################################################################################################################################################################
+
+#sudo apt update
+#sudo apt upgrade
 
 #Install all programs in conf-files/programs.txt
 #grep -vE '^\s*#|^\s*$' conf-files/programs.txt | sudo xargs -r apt install -y

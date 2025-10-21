@@ -1,0 +1,10 @@
+[Unit]
+Description=Set CPU to Perfomance
+After=multi-user.target power-profiles-daemon.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cpupower frequency-set --governor performance
+
+[Install]
+WantedBy=multi-user.target

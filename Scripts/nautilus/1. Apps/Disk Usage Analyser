@@ -4,5 +4,7 @@
 # Get the selected file or directory path from Nautilus
 DIR_PATH=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
 
+notify-send -i  baobab "Disk Usage Analyser" "Opening: $DIR_PATH in Baobab"
+
 # Open Baobab with the selected directory
 baobab "$DIR_PATH"

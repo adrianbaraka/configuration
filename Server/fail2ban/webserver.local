@@ -1,0 +1,14 @@
+[nginx-botsearch]
+enabled = true
+
+[nginx-bad-request]
+enabled = true
+
+[nginx-forbidden]
+enabled = true
+
+[nginx-http-auth]
+enabled = true
+
+[nginx-limit-req]
+enabled = true
