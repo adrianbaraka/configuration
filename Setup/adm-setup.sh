@@ -41,11 +41,3 @@ sudo bash -c 'echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf'
 sudo cp -v "$(dirname "$(pwd)")"/Scripts/cpuPower.service /etc/systemd/system
 
 sudo systemctl enable cpuPower.service
-
-#########################################################################################################################################################################
-
-#sudo apt update
-#sudo apt upgrade
-
-#Install all programs in conf-files/programs.txt
-#grep -vE '^\s*#|^\s*$' conf-files/programs.txt | sudo xargs -r apt install -y

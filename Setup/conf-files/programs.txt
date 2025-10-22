@@ -24,12 +24,11 @@ xfce4-whiskermenu-plugin
 xfce4-pulseaudio-plugin
 
 ## Gnome
-gnome-font-viewer
 gnome-disk-utility
 gnome-sound-recorder
 nautilus-admin
 nautilus-extension-gnome-terminal
-nautilus extension for Font Manager
+nautilus-font-manager
 libglib2.0-bin
 gsettings-desktop-schemas
 file-roller
@@ -59,8 +58,9 @@ gnome-core
 #loupe
 #nautilus 
 
+
 #others
-cheese
+#cheese
 cmatrix
 htop
 blueman
@@ -69,15 +69,14 @@ vlc
 vlc-plugin-notify
 fastfetch
 bat
-python3
 tree
 sqlitebrowser
 qt5ct
 adwaita-qt
-simplescreenrecorder
+#simplescreenrecorder
 menulibre
 alacarte
-mugshot
+#mugshot
 ffmpegthumbnailer
 ffmpeg
 libavcodec-extra
@@ -104,9 +103,13 @@ rsync
 unzip
 zip
 adb
+libreoffice
+libreoffice-gnome
+linux-cpupower
+python3
+python3-pip
+python3-venv
 
-#libreoffice
-#libreoffice-gtk4
 
 # not in repos
 #firefox
@@ -123,11 +126,16 @@ adb
 #postman
 #tor
 
+
 #flatpaks
 #vn.hoabinh.quan.CoBang
 #me.iepure.devtoolbox
 #io.github.realmazharhussain.GdmSettings
-#dev.bragefuglseth.Keypunch
 #io.missioncenter.MissionCenter
 #com.github.joseexposito.touche
 #io.github.flattool.Warehouse
+
+#to remove after
+#gnome-maps
+#gnome-software
+

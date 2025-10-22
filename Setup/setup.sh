@@ -252,7 +252,7 @@ Hidden=false" > ~/.config/autostart/add-resolution.desktop
 mkdir -p ~/Templates
 
 #cp -r conf-files/Templates/* ~/Templates
-ln -s "$(pwd)"/conf-files/Templates ~/Templates
+ln -s "$(pwd)"/conf-files/Templates/* ~/Templates
 
 #########################################################################################################################################################################
 #Nautilus Scripts
@@ -281,4 +281,8 @@ StartupNotify=false
 Terminal=false
 Hidden=false" > ~/.config/autostart/ssh-agent.desktop
 
+##########################################################################################################################################################################
+#Create a virtual environment for python
+
+python -m venv "$HOME"/Utilities/myenv
 
