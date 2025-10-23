@@ -1,4 +1,3 @@
-#all aliases in different systems
 alias ..='cd ..'
 alias c='clear'
 alias chmod='chmod -v'
@@ -17,17 +16,16 @@ alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias files='xdg-open .'
 alias bat='batcat'
 alias rsync='rsync -v'
+
+# [Home PC]
 #alias jelly-logs='journalctl CONTAINER_NAME=goofy_heisenberg -f'
 alias jelly-logs='docker logs -f jellyfin'
-
-
-#debian specific aliases
 alias venv='source /home/abc/Utilities/myenv/bin/activate'
+alias files='xdg-open .'
 #alias notes='marktext /home/abc/Documents/configuration/notes.md'
-#alias pip='/home/abc/Utilities/scripts/pip_wrapper.sh'
+
 
 #termux specific
 #alias notes='cdl /data/data/com.termux/files/home/storage/shared/Documents/configuration'

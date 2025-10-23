@@ -9,24 +9,24 @@ cdl() {
     ls
 }
 
+#Update and upgrade packages
+update(){
+    sudo apt update
+    sudo apt upgrade
+}
+
+# [Home PC]
 ssh-termux() {
 	# Prompt the user for an IP address
 	echo -n "Enter the IP address: "
-	read ip_address
+	read -r ip_address
 
 	# Execute the SSH command with the provided IP
-	ssh -p 8022 u0_a225@$ip_address
+	ssh -p 8022 u0_a225@"$ip_address"
 }
 
 
 ssh-github(){
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/github_id_ed25519
-}
-
-
-#Update and upgrade packages
-update(){
-    sudo apt update
-    sudo apt upgrade
 }
