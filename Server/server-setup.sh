@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#set env variable for ps1
+echo export IS_REMOTE="True" >> "$HOME"/.bashrc
+
 #bashrc
-echo ../Setup/conf-files/bashrc >> "$HOME"/.bashrc
+cat ../Setup/conf-files/bashrc >> "$HOME"/.bashrc
 
 #bash aliases
 file=../Setup/conf-files/bash_aliases
@@ -23,8 +26,16 @@ while read -r line; do
     fi
 done <$filef
 
+#copy over install apps script
+cp -v ../Scripts/Install-apps.sh ./Scripts/
+
+# add the scripts directory to path
+srcdir="$(pwd)"/Scripts
+echo export PATH="$PATH:$srcdir" >> "$HOME"/.bashrc
+
 #delete everything else
-rm -rf ../Scripts ./Setup
-rm ../commands.md ../notes.md ../pip_requirements.txt ../programs.md
+rm -rfv ../Scripts ../Setup
+rm -v ../commands.md ../notes.md ../pip_requirements.txt ../programs.md
+
 
 
