@@ -1,0 +1,8 @@
+bat
+curl
+wget
+htop
+fail2ban
+ufw
+rsync
+fastfetch
