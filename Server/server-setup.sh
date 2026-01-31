@@ -4,6 +4,7 @@
 echo export IS_REMOTE="True" >> "$HOME"/.bashrc
 
 #bashrc
+<<<<<<< HEAD
 while read -r line; do
     if [ "$line" = "# [Home PC]" ]; then
         break
@@ -11,6 +12,9 @@ while read -r line; do
         echo "$line" >> "$HOME"/.bashrc
     fi
 done < ../Setup/conf-files/bashrc
+=======
+cat ../Setup/conf-files/bashrc >> "$HOME"/.bashrc
+>>>>>>> eb8a261b54872257f50c458722e15289a4a09caa
 
 #bash aliases
 file=../Setup/conf-files/bash_aliases
