@@ -26,7 +26,7 @@ xfce4-pulseaudio-plugin
 ## Gnome
 gnome-disk-utility
 gnome-sound-recorder
-nautilus-admin
+#nautilus-admin
 nautilus-extension-gnome-terminal
 nautilus-font-manager
 libglib2.0-bin
@@ -35,7 +35,7 @@ file-roller
 gnome-chess
 gnome-nibbles
 gnome-online-accounts-gtk 
-libfuse2t64
+#libfuse2t64
 libreoffice-gnome
 network-manager-gnome
 network-manager
@@ -79,8 +79,8 @@ alacarte
 #mugshot
 ffmpegthumbnailer
 ffmpeg
-libavcodec-extra
-libavcodec-extra61
+#libavcodec-extra
+#libavcodec-extra61
 libjpeg62-turbo 
 libjpeg-dev
 synaptic
@@ -109,6 +109,7 @@ linux-cpupower
 python3
 python3-pip
 python3-venv
+command-not-found
 
 
 # not in repos

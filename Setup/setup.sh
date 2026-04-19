@@ -215,10 +215,14 @@ cp -v conf-files/terminalrc ~/.config/xfce4/terminal/terminalrc
 
 #########################################################################################################################################################################
 #Bash configurations
-cat conf-files/bashrc >> ~/.bashrc
 
-ln -s "$(pwd)"/conf-files/bash_aliases ~/.bash_aliases
-ln -s "$(pwd)"/conf-files/bash_functions ~/.bash_functions
+echo "# Source .bashfunctions file
+if [[ -f ~/.bash_func ]]; then
+    # shellcheck disable=SC1090
+    . ~/.bash_func
+fi" >> ~/.bashrc
+
+ln -s "$(pwd)"/conf-files/bash_func ~/.bash_func
 
 notify-send -i preferences-desktop "Setup" "Restart to ensure all changes take effect"
 
@@ -284,5 +288,5 @@ Hidden=false" > ~/.config/autostart/ssh-agent.desktop
 ##########################################################################################################################################################################
 #Create a virtual environment for python
 
-python -m venv "$HOME"/Utilities/myenv
+python3 -m venv "$HOME"/Utilities/myenv
 

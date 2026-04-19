@@ -1,12 +1,9 @@
 bat
 curl
 wget
-<<<<<<< HEAD
 htop
 fail2ban
 ufw
 rsync
 fastfetch
-=======
 htop
->>>>>>> eb8a261b54872257f50c458722e15289a4a09caa

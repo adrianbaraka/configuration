@@ -5,5 +5,8 @@ DIR_PATH=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
 
 notify-send -i  vstudio "Visual Studio Code" "Opening: $DIR_PATH in Visual Studio Code"
 
+# ensure full path
+source ~/.bashrc
+
 # Open Visual Studio Code with the selected file or directory
 code "$DIR_PATH"
